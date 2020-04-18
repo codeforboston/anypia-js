@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{04D12005-AA76-430E-903A-4ED955E06AA3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../oactobjs32;../oactobjs32/include;../oactobjs32/windows;../oactobjs32/boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)anypia32.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\oactobjs32\boost_1_64_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)anypia32.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../oactobjs32;../oactobjs32/include;../oactobjs32/windows;../oactobjs32/boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>true</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)anypia32.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\oactobjs32\boost_1_64_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Anypia32.cpp" />
+    <ClCompile Include="anypiadoc.cpp" />
+    <ClCompile Include="AnypiaView.cpp" />
+    <ClCompile Include="AssumptionsDialog.cpp" />
+    <ClCompile Include="AwbidatIni.cpp" />
+    <ClCompile Include="AwincIni.cpp" />
+    <ClCompile Include="AwprojDialog.cpp" />
+    <ClCompile Include="AwsetDialog.cpp" />
+    <ClCompile Include="BaseyearDialog.cpp" />
+    <ClCompile Include="BaseyearIni.cpp" />
+    <ClCompile Include="BiprojDialog.cpp" />
+    <ClCompile Include="BiprojIni.cpp" />
+    <ClCompile Include="BisetDialog.cpp" />
+    <ClCompile Include="CachupIni.cpp" />
+    <ClCompile Include="ConfigDialog.cpp" />
+    <ClCompile Include="ConfigIni.cpp" />
+    <ClCompile Include="CuprojDialog.cpp" />
+    <ClCompile Include="CusetDialog.cpp" />
+    <ClCompile Include="DeathDialog.cpp" />
+    <ClCompile Include="DisabDialog.cpp" />
+    <ClCompile Include="EarningsDialog.cpp" />
+    <ClCompile Include="FoinfoDialog.cpp" />
+    <ClCompile Include="FoinfoIni.cpp" />
+    <ClCompile Include="FormatString.cpp" />
+    <ClCompile Include="HistAmtClearDialog.cpp" />
+    <ClCompile Include="HistAmtModifyDialog.cpp" />
+    <ClCompile Include="HistAmtReviewDialog.cpp" />
+    <ClCompile Include="HistAmtUpdateDialog.cpp" />
+    <ClCompile Include="Introduction.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Milserv.cpp" />
+    <ClCompile Include="NonPebesDialog.cpp" />
+    <ClCompile Include="PebesDialog.cpp" />
+    <ClCompile Include="QctotDialog.cpp" />
+    <ClCompile Include="ScreenDialog.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="TextFloatFormatPatch.cpp" />
+    <ClCompile Include="WageBaseDialog.cpp" />
+    <ClCompile Include="WorkerDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HistAmtClearDialog.h" />
+    <ClInclude Include="Introduction.h" />
+    <ClInclude Include="Anypia32.h" />
+    <ClInclude Include="anypiadoc.h" />
+    <ClInclude Include="AnypiaView.h" />
+    <ClInclude Include="AssumptionsDialog.h" />
+    <ClInclude Include="AwbidatIni.h" />
+    <ClInclude Include="AwincIni.h" />
+    <ClInclude Include="AwprojDialog.h" />
+    <ClInclude Include="AwsetDialog.h" />
+    <ClInclude Include="BaseyearDialog.h" />
+    <ClInclude Include="BaseyearIni.h" />
+    <ClInclude Include="BiprojDialog.h" />
+    <ClInclude Include="BiprojIni.h" />
+    <ClInclude Include="BisetDialog.h" />
+    <ClInclude Include="CachupIni.h" />
+    <ClInclude Include="ConfigDialog.h" />
+    <ClInclude Include="ConfigIni.h" />
+    <ClInclude Include="CuprojDialog.h" />
+    <ClInclude Include="CusetDialog.h" />
+    <ClInclude Include="DeathDialog.h" />
+    <ClInclude Include="DisabDialog.h" />
+    <ClInclude Include="EarningsDialog.h" />
+    <ClInclude Include="FoinfoDialog.h" />
+    <ClInclude Include="FoinfoIni.h" />
+    <ClInclude Include="HistAmtModifyDialog.h" />
+    <ClInclude Include="HistAmtReviewDialog.h" />
+    <ClInclude Include="HistAmtUpdateDialog.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Milserv.h" />
+    <ClInclude Include="NonPebesDialog.h" />
+    <ClInclude Include="outdc.h" />
+    <ClInclude Include="PebesDialog.h" />
+    <ClInclude Include="pia.h" />
+    <ClInclude Include="QctotDialog.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScreenDialog.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TextFloatFormatPatch.h" />
+    <ClInclude Include="WageBaseDialog.h" />
+    <ClInclude Include="WorkerDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource.hm" />
+    <None Include="res\Anypia32.ico" />
+    <None Include="res\Anypia32Doc.ico" />
+    <None Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Anypia32.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\oactobjs32\misc\misc.vcxproj">
+      <Project>{9f7729ac-cf56-48f6-a8cf-13e30d5e5928}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\oactobjs32\piadata\piadata.vcxproj">
+      <Project>{ef4e5ae3-6b6d-4af0-8634-7ba4cd24af58}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\oactobjs32\piaout\piaout.vcxproj">
+      <Project>{a2f446fd-5f0a-4e06-8375-9d2d15904417}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\oactobjs32\windows\windows.vcxproj">
+      <Project>{20224353-c8ea-4b5f-b956-2348b8d174f6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Anypia32.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

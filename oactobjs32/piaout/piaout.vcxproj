@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A2F446FD-5F0A-4E06-8375-9D2D15904417}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)piaout.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>true</MinimalRebuild>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)piaout.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AnypiaOut.cpp" />
+    <ClCompile Include="ChildCareCalc1Page.cpp" />
+    <ClCompile Include="ChildCareCalc2Page.cpp" />
+    <ClCompile Include="DibGuarPage.cpp" />
+    <ClCompile Include="EarningsPage.cpp" />
+    <ClCompile Include="FamilyPage.cpp" />
+    <ClCompile Include="FrozMinPage.cpp" />
+    <ClCompile Include="InsuredPage.cpp" />
+    <ClCompile Include="OldStart1Page.cpp" />
+    <ClCompile Include="OldStart2Page.cpp" />
+    <ClCompile Include="OnePage.cpp" />
+    <ClCompile Include="PebsCreditInfo.cpp" />
+    <ClCompile Include="PebsEarnings.cpp" />
+    <ClCompile Include="PebsEarningsInfo.cpp" />
+    <ClCompile Include="PebsLetter.cpp" />
+    <ClCompile Include="PebsOasdiEst.cpp" />
+    <ClCompile Include="PebsOasdiInfo.cpp" />
+    <ClCompile Include="PebsOut.cpp" />
+    <ClCompile Include="PebsPageOut.cpp" />
+    <ClCompile Include="PebsWorkerEarnings.cpp" />
+    <ClCompile Include="PebsWorkerInfo.cpp" />
+    <ClCompile Include="PiaOut.cpp" />
+    <ClCompile Include="PiaPageOut.cpp" />
+    <ClCompile Include="PiaTable1Page.cpp" />
+    <ClCompile Include="PiaTable2Page.cpp" />
+    <ClCompile Include="ReindWid1Page.cpp" />
+    <ClCompile Include="ReindWid2Page.cpp" />
+    <ClCompile Include="SpecMin1Page.cpp" />
+    <ClCompile Include="SpecMin2Page.cpp" />
+    <ClCompile Include="Summary1Page.cpp" />
+    <ClCompile Include="Summary2Page.cpp" />
+    <ClCompile Include="Summary3Page.cpp" />
+    <ClCompile Include="SummaryPage.cpp" />
+    <ClCompile Include="TaxesPage.cpp" />
+    <ClCompile Include="TransGuar1Page.cpp" />
+    <ClCompile Include="TransGuar2Page.cpp" />
+    <ClCompile Include="WageInd1Page.cpp" />
+    <ClCompile Include="WageInd2Page.cpp" />
+    <ClCompile Include="WageIndNonFreeze1Page.cpp" />
+    <ClCompile Include="WageIndNonFreeze2Page.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnypiaOut.h" />
+    <ClInclude Include="ChildCareCalc1Page.h" />
+    <ClInclude Include="ChildCareCalc2Page.h" />
+    <ClInclude Include="DibGuarPage.h" />
+    <ClInclude Include="EarningsPage.h" />
+    <ClInclude Include="FamilyPage.h" />
+    <ClInclude Include="FrozMinPage.h" />
+    <ClInclude Include="InsuredPage.h" />
+    <ClInclude Include="OldStart1Page.h" />
+    <ClInclude Include="OldStart2Page.h" />
+    <ClInclude Include="OnePage.h" />
+    <ClInclude Include="PebsCreditInfo.h" />
+    <ClInclude Include="PebsEarnings.h" />
+    <ClInclude Include="PebsEarningsInfo.h" />
+    <ClInclude Include="PebsLetter.h" />
+    <ClInclude Include="PebsOasdiEst.h" />
+    <ClInclude Include="PebsOasdiInfo.h" />
+    <ClInclude Include="PebsOut.h" />
+    <ClInclude Include="PebsPageOut.h" />
+    <ClInclude Include="PebsWorkerEarnings.h" />
+    <ClInclude Include="PebsWorkerInfo.h" />
+    <ClInclude Include="PiaOut.h" />
+    <ClInclude Include="PiaPageOut.h" />
+    <ClInclude Include="PiaTable1Page.h" />
+    <ClInclude Include="PiaTable2Page.h" />
+    <ClInclude Include="ReindWid1Page.h" />
+    <ClInclude Include="ReindWid2Page.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SpecMin1Page.h" />
+    <ClInclude Include="SpecMin2Page.h" />
+    <ClInclude Include="Summary1Page.h" />
+    <ClInclude Include="Summary2Page.h" />
+    <ClInclude Include="Summary3Page.h" />
+    <ClInclude Include="SummaryPage.h" />
+    <ClInclude Include="TaxesPage.h" />
+    <ClInclude Include="TransGuar1Page.h" />
+    <ClInclude Include="TransGuar2Page.h" />
+    <ClInclude Include="WageInd1Page.h" />
+    <ClInclude Include="WageInd2Page.h" />
+    <ClInclude Include="WageIndNonFreeze1Page.h" />
+    <ClInclude Include="WageIndNonFreeze2Page.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

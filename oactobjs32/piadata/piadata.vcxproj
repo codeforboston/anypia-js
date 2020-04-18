@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EF4E5AE3-6B6D-4AF0-8634-7BA4CD24AF58}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)piadata.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MinimalRebuild>true</MinimalRebuild>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)piadata.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Assumptions.cpp" />
+    <ClCompile Include="AssumptionsFile.cpp" />
+    <ClCompile Include="AssumptionsNonFile.cpp" />
+    <ClCompile Include="AssumptionType.cpp" />
+    <ClCompile Include="avgwg.cpp" />
+    <ClCompile Include="awbidat.cpp" />
+    <ClCompile Include="awbidtfl.cpp" />
+    <ClCompile Include="awbidtnf.cpp" />
+    <ClCompile Include="awinc.cpp" />
+    <ClCompile Include="AwincDoc.cpp" />
+    <ClCompile Include="awincfl.cpp" />
+    <ClCompile Include="awincnf.cpp" />
+    <ClCompile Include="BaseChangeType.cpp" />
+    <ClCompile Include="baseyear.cpp" />
+    <ClCompile Include="baseyrfl.cpp" />
+    <ClCompile Include="baseyrnf.cpp" />
+    <ClCompile Include="bendmfb.cpp" />
+    <ClCompile Include="bendpia.cpp" />
+    <ClCompile Include="BendPoints.cpp" />
+    <ClCompile Include="BenefitAmount.cpp" />
+    <ClCompile Include="BenefitAmountArray.cpp" />
+    <ClCompile Include="Bic.cpp" />
+    <ClCompile Include="biproj.cpp" />
+    <ClCompile Include="biprojfl.cpp" />
+    <ClCompile Include="biprojnf.cpp" />
+    <ClCompile Include="bpmfbout.cpp" />
+    <ClCompile Include="bppiaout.cpp" />
+    <ClCompile Include="cachpdoc.cpp" />
+    <ClCompile Include="cachup.cpp" />
+    <ClCompile Include="cachupfl.cpp" />
+    <ClCompile Include="cachupnf.cpp" />
+    <ClCompile Include="ChildCareCalc.cpp" />
+    <ClCompile Include="ChildCareCalcLC.cpp" />
+    <ClCompile Include="CompPeriod.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="configFile.cpp" />
+    <ClCompile Include="configNonFile.cpp" />
+    <ClCompile Include="DebugCase.cpp" />
+    <ClCompile Include="DibGuar.cpp" />
+    <ClCompile Include="DibGuarLC.cpp" />
+    <ClCompile Include="dinscode.cpp" />
+    <ClCompile Include="DisabPeriod.cpp" />
+    <ClCompile Include="DisInsCodeArray.cpp" />
+    <ClCompile Include="EarnProject.cpp" />
+    <ClCompile Include="foinfo.cpp" />
+    <ClCompile Include="foinfofl.cpp" />
+    <ClCompile Include="foinfonf.cpp" />
+    <ClCompile Include="FrozMin.cpp" />
+    <ClCompile Include="frzyrs.cpp" />
+    <ClCompile Include="inscode.cpp" />
+    <ClCompile Include="InsCodeArray.cpp" />
+    <ClCompile Include="LawChange.cpp" />
+    <ClCompile Include="LawChangeAGE65COMP.cpp" />
+    <ClCompile Include="LawChangeALLEARN.cpp" />
+    <ClCompile Include="LawChangeArray.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..;../windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="LawChangeBPFRACWAGE.cpp" />
+    <ClCompile Include="LawChangeBPMINCONST.cpp" />
+    <ClCompile Include="LawChangeBPSPECRATE.cpp" />
+    <ClCompile Include="LawChangeCHILDCARECREDIT.cpp" />
+    <ClCompile Include="LawChangeCHILDCAREDROPOUT.cpp" />
+    <ClCompile Include="LawChangeCOLACHANGE.cpp" />
+    <ClCompile Include="LawChangeDECLINEPERC.cpp" />
+    <ClCompile Include="LawChangeDROPOUTCHG.cpp" />
+    <ClCompile Include="LawChangeMARRLENGTH.cpp" />
+    <ClCompile Include="LawChangeNEWFORMULA.cpp" />
+    <ClCompile Include="LawChangeNEWSPECMIN.cpp" />
+    <ClCompile Include="LawChangeNRACHANGE.cpp" />
+    <ClCompile Include="LawChangeOut.cpp" />
+    <ClCompile Include="LawChangePSAACCT.cpp" />
+    <ClCompile Include="LawChangeRead.cpp" />
+    <ClCompile Include="LawChangeTAXBENCHG.cpp" />
+    <ClCompile Include="LawChangeTAXRATECHG.cpp" />
+    <ClCompile Include="LawChangeWAGEBASECHG.cpp" />
+    <ClCompile Include="LawChangeWIDFACTOR.cpp" />
+    <ClCompile Include="LawChangeWIFEFACTOR.cpp" />
+    <ClCompile Include="LawChangeWrite.cpp" />
+    <ClCompile Include="msdates.cpp" />
+    <ClCompile Include="msdatesvec.cpp" />
+    <ClCompile Include="oldpia.cpp" />
+    <ClCompile Include="oldstart.cpp" />
+    <ClCompile Include="OldStartLC.cpp" />
+    <ClCompile Include="pebs.cpp" />
+    <ClCompile Include="PercPiaOut.cpp" />
+    <ClCompile Include="piacal.cpp" />
+    <ClCompile Include="piacalany.cpp" />
+    <ClCompile Include="piacallc.cpp" />
+    <ClCompile Include="PiaCalPL.cpp" />
+    <ClCompile Include="piadata.cpp" />
+    <ClCompile Include="PiadataArray.cpp" />
+    <ClCompile Include="PiaMethod.cpp" />
+    <ClCompile Include="PiaParamsLCTR.cpp" />
+    <ClCompile Include="PiaParamsTR.cpp" />
+    <ClCompile Include="piaparms.cpp" />
+    <ClCompile Include="piaparmsAny.cpp" />
+    <ClCompile Include="piaparmsLC.cpp" />
+    <ClCompile Include="piaparmsPL.cpp" />
+    <ClCompile Include="piaread.cpp" />
+    <ClCompile Include="piareadAny.cpp" />
+    <ClCompile Include="PiaTable.cpp" />
+    <ClCompile Include="PiaTableLC.cpp" />
+    <ClCompile Include="piawrite.cpp" />
+    <ClCompile Include="piawriteAny.cpp" />
+    <ClCompile Include="pib50mfb.cpp" />
+    <ClCompile Include="pib50pib.cpp" />
+    <ClCompile Include="pib52ame.cpp" />
+    <ClCompile Include="pib52mfb.cpp" />
+    <ClCompile Include="pib54ame.cpp" />
+    <ClCompile Include="pib54mfb.cpp" />
+    <ClCompile Include="pib54pia.cpp" />
+    <ClCompile Include="pib58ame.cpp" />
+    <ClCompile Include="pib58pib.cpp" />
+    <ClCompile Include="Pifc.cpp" />
+    <ClCompile Include="PortionAime.cpp" />
+    <ClCompile Include="PresValFacs.cpp" />
+    <ClCompile Include="Psa.cpp" />
+    <ClCompile Include="qc.cpp" />
+    <ClCompile Include="qcamt.cpp" />
+    <ClCompile Include="QcArray.cpp" />
+    <ClCompile Include="QcPacked.cpp" />
+    <ClCompile Include="railroad.cpp" />
+    <ClCompile Include="ReindWid.cpp" />
+    <ClCompile Include="ReindWidLC.cpp" />
+    <ClCompile Include="RetireTest.cpp" />
+    <ClCompile Include="rtgenrl.cpp" />
+    <ClCompile Include="ScaledEarnFactors.cpp" />
+    <ClCompile Include="Secondary.cpp" />
+    <ClCompile Include="SecondaryArray.cpp" />
+    <ClCompile Include="Sga.cpp" />
+    <ClCompile Include="SgaDerived.cpp" />
+    <ClCompile Include="SgaGeneral.cpp" />
+    <ClCompile Include="SpecMin.cpp" />
+    <ClCompile Include="SpecMinLC.cpp" />
+    <ClCompile Include="TaxBenefits.cpp" />
+    <ClCompile Include="TaxBenefitsLC.cpp" />
+    <ClCompile Include="TaxData.cpp" />
+    <ClCompile Include="TaxRates.cpp" />
+    <ClCompile Include="TaxRatesLC.cpp" />
+    <ClCompile Include="TaxRatesPL.cpp" />
+    <ClCompile Include="TransGuar.cpp" />
+    <ClCompile Include="TransGuarLC.cpp" />
+    <ClCompile Include="UserAssumptions.cpp" />
+    <ClCompile Include="WageBase.cpp" />
+    <ClCompile Include="WageInd.cpp" />
+    <ClCompile Include="WageIndGeneral.cpp" />
+    <ClCompile Include="WageIndLC.cpp" />
+    <ClCompile Include="WageIndNonFreeze.cpp" />
+    <ClCompile Include="wbgenrl.cpp" />
+    <ClCompile Include="wbgenrlLC.cpp" />
+    <ClCompile Include="WorkerDataArray.cpp" />
+    <ClCompile Include="WorkerDataGeneral.cpp" />
+    <ClCompile Include="wrkrdata.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Assumptions.h" />
+    <ClInclude Include="..\include\AssumptionsFile.h" />
+    <ClInclude Include="..\include\AssumptionsNonFile.h" />
+    <ClInclude Include="..\include\AssumptionType.h" />
+    <ClInclude Include="..\include\avgwg.h" />
+    <ClInclude Include="..\include\awbidat.h" />
+    <ClInclude Include="..\include\AwbiDataFile.h" />
+    <ClInclude Include="..\include\AwbiDataNonFile.h" />
+    <ClInclude Include="..\include\awinc.h" />
+    <ClInclude Include="..\include\AwincDoc.h" />
+    <ClInclude Include="..\include\AwincFile.h" />
+    <ClInclude Include="..\include\AwincNonFile.h" />
+    <ClInclude Include="..\include\BaseChangeType.h" />
+    <ClInclude Include="..\include\baseyear.h" />
+    <ClInclude Include="..\include\BaseYearFile.h" />
+    <ClInclude Include="..\include\BaseYearNonFile.h" />
+    <ClInclude Include="..\include\bendmfb.h" />
+    <ClInclude Include="..\include\bendpia.h" />
+    <ClInclude Include="..\include\BendPoints.h" />
+    <ClInclude Include="..\include\BenefitAmount.h" />
+    <ClInclude Include="..\include\BenefitAmountArray.h" />
+    <ClInclude Include="..\include\bic.h" />
+    <ClInclude Include="..\include\biproj.h" />
+    <ClInclude Include="..\include\BiprojFile.h" />
+    <ClInclude Include="..\include\BiprojNonFile.h" />
+    <ClInclude Include="..\include\BitAnnual.h" />
+    <ClInclude Include="..\include\bpmfbout.h" />
+    <ClInclude Include="..\include\bppiaout.h" />
+    <ClInclude Include="..\include\cachup.h" />
+    <ClInclude Include="..\include\cachupf.h" />
+    <ClInclude Include="..\include\CatchupFile.h" />
+    <ClInclude Include="..\include\CatchupNonFile.h" />
+    <ClInclude Include="..\include\ChildCareCalc.h" />
+    <ClInclude Include="..\include\ChildCareCalcLC.h" />
+    <ClInclude Include="..\include\comppd.h" />
+    <ClInclude Include="..\include\config.h" />
+    <ClInclude Include="..\include\ConfigFile.h" />
+    <ClInclude Include="..\include\ConfigNonFile.h" />
+    <ClInclude Include="..\include\DebugCase.h" />
+    <ClInclude Include="..\include\DibGuar.h" />
+    <ClInclude Include="..\include\DibGuarLC.h" />
+    <ClInclude Include="..\include\dinscode.h" />
+    <ClInclude Include="..\include\DisabPeriod.h" />
+    <ClInclude Include="..\include\DisInsCodeArray.h" />
+    <ClInclude Include="..\include\EarnProject.h" />
+    <ClInclude Include="..\include\FieldOfficeInfoFile.h" />
+    <ClInclude Include="..\include\FieldOfficeInfoNonFile.h" />
+    <ClInclude Include="..\include\foinfo.h" />
+    <ClInclude Include="..\include\FrozMin.h" />
+    <ClInclude Include="..\include\frzyrs.h" />
+    <ClInclude Include="..\include\inscode.h" />
+    <ClInclude Include="..\include\InsCodeArray.h" />
+    <ClInclude Include="..\include\LawChange.h" />
+    <ClInclude Include="..\include\LawChangeAGE65COMP.h" />
+    <ClInclude Include="..\include\LawChangeALLEARN.h" />
+    <ClInclude Include="..\include\LawChangeArray.h" />
+    <ClInclude Include="..\include\LawChangeBPFRACWAGE.h" />
+    <ClInclude Include="..\include\LawChangeBPMINCONST.h" />
+    <ClInclude Include="..\include\LawChangeBPSPECRATE.h" />
+    <ClInclude Include="..\include\LawChangeCHILDCARECREDIT.h" />
+    <ClInclude Include="..\include\LawChangeCHILDCAREDROPOUT.h" />
+    <ClInclude Include="..\include\LawChangeCOLACHANGE.h" />
+    <ClInclude Include="..\include\LawChangeDECLINEPERC.h" />
+    <ClInclude Include="..\include\LawChangeDROPOUTCHG.h" />
+    <ClInclude Include="..\include\LawChangeMARRLENGTH.h" />
+    <ClInclude Include="..\include\LawChangeNEWFORMULA.h" />
+    <ClInclude Include="..\include\LawChangeNEWSPECMIN.h" />
+    <ClInclude Include="..\include\LawChangeNRACHANGE.h" />
+    <ClInclude Include="..\include\LawChangeOut.h" />
+    <ClInclude Include="..\include\LawChangePSAACCT.h" />
+    <ClInclude Include="..\include\LawChangeRead.h" />
+    <ClInclude Include="..\include\LawChangeTAXBENCHG.h" />
+    <ClInclude Include="..\include\LawChangeTAXRATECHG.h" />
+    <ClInclude Include="..\include\LawChangeWAGEBASECHG.h" />
+    <ClInclude Include="..\include\LawChangeWIDFACTOR.h" />
+    <ClInclude Include="..\include\LawChangeWIFEFACTOR.h" />
+    <ClInclude Include="..\include\LawChangeWrite.h" />
+    <ClInclude Include="..\include\MilServDatesVec.h" />
+    <ClInclude Include="..\include\msdates.h" />
+    <ClInclude Include="..\include\oactcnst.h" />
+    <ClInclude Include="..\include\OldPia.h" />
+    <ClInclude Include="..\include\OldStart.h" />
+    <ClInclude Include="..\include\OldStartLC.h" />
+    <ClInclude Include="..\include\pebs.h" />
+    <ClInclude Include="..\include\PercPiaOut.h" />
+    <ClInclude Include="..\include\piacal.h" />
+    <ClInclude Include="..\include\PiaCalAny.h" />
+    <ClInclude Include="..\include\PiaCalLC.h" />
+    <ClInclude Include="..\include\PiaCalPL.h" />
+    <ClInclude Include="..\include\piadata.h" />
+    <ClInclude Include="..\include\PiadataArray.h" />
+    <ClInclude Include="..\include\PiaMethod.h" />
+    <ClInclude Include="..\include\PiaParamsLCTR.h" />
+    <ClInclude Include="..\include\PiaParamsTR.h" />
+    <ClInclude Include="..\include\piaparms.h" />
+    <ClInclude Include="..\include\piaparmsAny.h" />
+    <ClInclude Include="..\include\piaparmsLC.h" />
+    <ClInclude Include="..\include\piaparmsPL.h" />
+    <ClInclude Include="..\include\piaread.h" />
+    <ClInclude Include="..\include\piareadAny.h" />
+    <ClInclude Include="..\include\PiaTable.h" />
+    <ClInclude Include="..\include\PiaTableLC.h" />
+    <ClInclude Include="..\include\piawrite.h" />
+    <ClInclude Include="..\include\piawriteAny.h" />
+    <ClInclude Include="..\include\pibtable.h" />
+    <ClInclude Include="..\include\Pifc.h" />
+    <ClInclude Include="..\include\PortionAime.h" />
+    <ClInclude Include="..\include\Psa.h" />
+    <ClInclude Include="..\include\qc.h" />
+    <ClInclude Include="..\include\qcamt.h" />
+    <ClInclude Include="..\include\QcArray.h" />
+    <ClInclude Include="..\include\QcPacked.h" />
+    <ClInclude Include="..\include\railroad.h" />
+    <ClInclude Include="..\include\ReindWid.h" />
+    <ClInclude Include="..\include\ReindWidLC.h" />
+    <ClInclude Include="..\include\Resource.h" />
+    <ClInclude Include="..\include\RetireTest.h" />
+    <ClInclude Include="..\include\rtgenrl.h" />
+    <ClInclude Include="..\include\ScaledEarnFactors.h" />
+    <ClInclude Include="..\include\Secondary.h" />
+    <ClInclude Include="..\include\SecondaryArray.h" />
+    <ClInclude Include="..\include\Sga.h" />
+    <ClInclude Include="..\include\SgaDerived.h" />
+    <ClInclude Include="..\include\SgaGeneral.h" />
+    <ClInclude Include="..\include\SpecMin.h" />
+    <ClInclude Include="..\include\SpecMinLC.h" />
+    <ClInclude Include="..\include\ssn.h" />
+    <ClInclude Include="..\include\TaxBenefits.h" />
+    <ClInclude Include="..\include\TaxBenefitsLC.h" />
+    <ClInclude Include="..\include\TaxData.h" />
+    <ClInclude Include="..\include\TaxRates.h" />
+    <ClInclude Include="..\include\TaxRatesLC.h" />
+    <ClInclude Include="..\include\TaxRatesPL.h" />
+    <ClInclude Include="..\include\TransGuar.h" />
+    <ClInclude Include="..\include\TransGuarLC.h" />
+    <ClInclude Include="..\include\UserAssumptions.h" />
+    <ClInclude Include="..\include\WageBase.h" />
+    <ClInclude Include="..\include\WageInd.h" />
+    <ClInclude Include="..\include\WageIndGeneral.h" />
+    <ClInclude Include="..\include\WageIndLC.h" />
+    <ClInclude Include="..\include\WageIndNonFreeze.h" />
+    <ClInclude Include="..\include\wbgenrl.h" />
+    <ClInclude Include="..\include\wbgenrlLC.h" />
+    <ClInclude Include="..\include\WorkerDataArray.h" />
+    <ClInclude Include="..\include\WorkerDataGeneral.h" />
+    <ClInclude Include="..\include\wrkrdata.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

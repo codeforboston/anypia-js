@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F7729AC-CF56-48F6-A8CF-13E30D5E5928}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4251;4275;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)misc.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../;../include;../windows;../boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4251;4275;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MinimalRebuild>true</MinimalRebuild>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="age.cpp" />
+    <ClCompile Include="AnnualArrays.cpp" />
+    <ClCompile Include="BitAnnual.cpp" />
+    <ClCompile Include="comma.cpp" />
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="DateFormatter.cpp" />
+    <ClCompile Include="datemoyr.cpp" />
+    <ClCompile Include="dbleann.cpp" />
+    <ClCompile Include="dblemth.cpp" />
+    <ClCompile Include="dbleqtr.cpp" />
+    <ClCompile Include="document.cpp" />
+    <ClCompile Include="DoubleAnnualRW.cpp" />
+    <ClCompile Include="floatann.cpp" />
+    <ClCompile Include="floatmth.cpp" />
+    <ClCompile Include="floatqtr.cpp" />
+    <ClCompile Include="genfile.cpp" />
+    <ClCompile Include="intann.cpp" />
+    <ClCompile Include="NumPunct.cpp" />
+    <ClCompile Include="outfile.cpp" />
+    <ClCompile Include="OutfileHTML.cpp" />
+    <ClCompile Include="page.cpp" />
+    <ClCompile Include="PageOut.cpp" />
+    <ClCompile Include="Path.cpp" />
+    <ClCompile Include="PiaException.cpp" />
+    <ClCompile Include="qtryear.cpp" />
+    <ClCompile Include="Sex.cpp" />
+    <ClCompile Include="ssn.cpp" />
+    <ClCompile Include="StringParser.cpp" />
+    <ClCompile Include="TextWriterTraceListener.cpp" />
+    <ClCompile Include="Trace.cpp" />
+    <ClCompile Include="TraceListener.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\age.h" />
+    <ClInclude Include="..\include\AnnualArrays.h" />
+    <ClInclude Include="..\include\BitAnnual.h" />
+    <ClInclude Include="..\include\cminmax.h" />
+    <ClInclude Include="..\include\comma.h" />
+    <ClInclude Include="..\include\date.h" />
+    <ClInclude Include="..\include\DateFormatter.h" />
+    <ClInclude Include="..\include\datemodyyr.h" />
+    <ClInclude Include="..\include\datemoyr.h" />
+    <ClInclude Include="..\include\dbleann.h" />
+    <ClInclude Include="..\include\dblemth.h" />
+    <ClInclude Include="..\include\dbleqtr.h" />
+    <ClInclude Include="..\include\document.h" />
+    <ClInclude Include="..\include\DoubleAnnualRW.h" />
+    <ClInclude Include="..\include\floatann.h" />
+    <ClInclude Include="..\include\floatmth.h" />
+    <ClInclude Include="..\include\floatqtr.h" />
+    <ClInclude Include="..\include\FormatString.h" />
+    <ClInclude Include="..\include\genfile.h" />
+    <ClInclude Include="..\include\intann.h" />
+    <ClInclude Include="..\include\NumPunct.h" />
+    <ClInclude Include="..\include\outfile.h" />
+    <ClInclude Include="..\include\OutfileHTML.h" />
+    <ClInclude Include="..\include\page.h" />
+    <ClInclude Include="..\include\PageOut.h" />
+    <ClInclude Include="..\include\Path.h" />
+    <ClInclude Include="..\include\pathname.h" />
+    <ClInclude Include="..\include\PiaException.h" />
+    <ClInclude Include="..\include\qtryear.h" />
+    <ClInclude Include="..\include\Sex.h" />
+    <ClInclude Include="..\include\ssn.h" />
+    <ClInclude Include="..\include\StringParser.h" />
+    <ClInclude Include="..\include\TextWriterTraceListener.h" />
+    <ClInclude Include="..\include\Trace.h" />
+    <ClInclude Include="..\include\TraceListener.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\anypia32\res\Toolbar.bmp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
