@@ -1,4 +1,4 @@
-// $Id: HistAmtReviewDialog.cpp 1.8.1.1 2012/03/08 06:55:02EST 277133 Development 277133(2012/03/08 06:55:46EST) $
+// $Id: HistAmtReviewDialog.cpp 1.8.1.1 2012/03/08 06:55:02EST 277133 Development 277133(2018/10/15 09:57:19EDT) $
 //
 // Implementation of HistAmtReviewDialog.
 
@@ -120,7 +120,7 @@ void HistAmtReviewDialog::setupdata()
       poutNoComma(m_year).c_str());
    pS->SetWindowText(histamtstring);
    pS = (CStatic*) GetDlgItem(IDC_REVIEWBITEXT);
-   if (m_year > 1982) {
+   if (m_year > 1983) {
       AfxFormatString1(histamtstring, PIA_IDS_UPDATEBI,
          poutNoComma(m_year - 1).c_str());
    }
