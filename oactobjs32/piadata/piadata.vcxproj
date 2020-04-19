@@ -165,6 +165,8 @@
     <ClCompile Include="oldstart.cpp" />
     <ClCompile Include="OldStartLC.cpp" />
     <ClCompile Include="pebs.cpp" />
+    <ClCompile Include="percmfb.cpp" />
+    <ClCompile Include="percpia.cpp" />
     <ClCompile Include="PercPiaOut.cpp" />
     <ClCompile Include="piacal.cpp" />
     <ClCompile Include="piacalany.cpp" />
@@ -320,6 +322,8 @@
     <ClInclude Include="..\include\OldStart.h" />
     <ClInclude Include="..\include\OldStartLC.h" />
     <ClInclude Include="..\include\pebs.h" />
+    <ClInclude Include="..\include\percmfb.h" />
+    <ClInclude Include="..\include\percpia.h" />
     <ClInclude Include="..\include\PercPiaOut.h" />
     <ClInclude Include="..\include\piacal.h" />
     <ClInclude Include="..\include\PiaCalAny.h" />
