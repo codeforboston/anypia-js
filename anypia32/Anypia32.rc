@@ -236,7 +236,7 @@ FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
     LTEXT           "Anypia Social Security Benefit",IDC_STATIC,40,10,119,8,SS_NOPREFIX
-    LTEXT           "Calculator, version 2019.1",IDC_STATIC,40,25,119,8
+    LTEXT           "Calculator, version 2019.2",IDC_STATIC,40,25,119,8
     DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
 END
 
