@@ -523,7 +523,7 @@ public:
   ///
   /// <returns>MALE (0) if male, FEMALE (1) if female.</returns>
   Sex::sex_type getSex() const
-  { return static_cast<Sex::sex_type>(theBits[SEX_BIT]); }
+  { return static_cast<Sex::sex_type>(int(theBits[SEX_BIT])); }
   /// <summary>Returns type of taxes for specified year.</summary>
   ///
   /// <remarks>Needs to be implemented by a child class.</remarks>
