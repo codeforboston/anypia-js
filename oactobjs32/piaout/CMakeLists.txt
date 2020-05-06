@@ -3,10 +3,6 @@ project(piaout CXX)
 ################################################################################
 # Source groups
 ################################################################################
-set(no_group_source_files
-    "ReadMe.txt"
-)
-source_group("" FILES ${no_group_source_files})
 
 set(Headers
     "AnypiaOut.h"
@@ -36,7 +32,7 @@ set(Headers
     "PiaTable2Page.h"
     "ReindWid1Page.h"
     "ReindWid2Page.h"
-    "resource.h"
+    "../include/resource.h"
     "SpecMin1Page.h"
     "SpecMin2Page.h"
     "Summary1Page.h"
