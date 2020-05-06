@@ -146,11 +146,6 @@ project(anypiab CXX)
 ################################################################################
 # Source groups
 ################################################################################
-set(no_group_source_files
-    "ReadMe.txt"
-)
-source_group("" FILES ${no_group_source_files})
-
 set(Headers
     "anypiabdoc.h"
     "anypiatestdoc.h"

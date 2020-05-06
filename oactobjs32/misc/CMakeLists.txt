@@ -5,7 +5,6 @@ project(misc CXX)
 ################################################################################
 set(no_group_source_files
     "../../anypia32/res/Toolbar.bmp"
-    "ReadMe.txt"
 )
 source_group("" FILES ${no_group_source_files})
 
