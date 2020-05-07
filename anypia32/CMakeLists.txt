@@ -76,35 +76,6 @@ include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
 ################################################################################
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-################################################################################
-# Sub-projects
-################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 project(anypia32 CXX)
 
@@ -112,10 +83,10 @@ project(anypia32 CXX)
 # Source groups
 ################################################################################
 set(no_group_source_files
-    "res/Anypia32.ico"
-    "res/Anypia32Doc.ico"
-    "res/Toolbar.bmp"
-    "resource.hm"
+    "${CMAKE_CURRENT_SOURCE_DIR}/res/Anypia32.ico"
+    "${CMAKE_CURRENT_SOURCE_DIR}/res/Anypia32Doc.ico"
+    "${CMAKE_CURRENT_SOURCE_DIR}/res/Toolbar.bmp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/resource.hm"
 )
 source_group("" FILES ${no_group_source_files})
 
@@ -151,7 +122,7 @@ set(Headers
     "MainFrm.h"
     "Milserv.h"
     "NonPebesDialog.h"
-    "../oactobjs32/include/outdc.h"
+    "../oactobjs32/windows/outdc.h"
     "PebesDialog.h"
     "pia.h"
     "QctotDialog.h"
