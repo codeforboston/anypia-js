@@ -27,10 +27,17 @@ To build for Windows using MSBuild (no requirements):
 - Find the executable in `\anypia-js\anypia32\Debug`
 
 To build for Windows with CMake:
-- Conversion from SLN files was done with https://github.com/pavelliavonau/cmakeconverter
+- Conversion from SLN files was done with https://github.com/pavelliavonau/cmakeconverter and https://cmakeconverter.readthedocs.io/en/develop/cmake.html
 -  `choco cmake`
 - `cd anypia-js\anypiab`
-- `"C:\Program Files\CMake\bin\cmake.exe" .`
+- `"C:\Program Files\CMake\bin\cmake.exe" -S anypia32 -B build` (already done)
+- `cmake --build build` (similar to MSBuild.exe but uses Microsoft NMake, [example output from both commands](https://gist.github.com/thadk/29dc65aa37ca10f13b268e25b9b55cdd))
+- Results in an executable but it has this error when run:
+```
+Debug Assertion Failed!: Program: anypia32.exe 
+File: F:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\apphelp.cpp Line: 27
+For information on how your program can cause an assertion failure see Visual C++ documention on asserts, retry to debug the application
+```
 
 To setup emscripten itself, loosely [based off this resource](https://mirano.blog/emscripten/):
 - run `python` and if it launches Microsoft Store, install it.
