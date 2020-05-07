@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\age.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\AnnualArrays.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\BitAnnual.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\comma.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\date.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\DateFormatter.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\datemoyr.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\dbleann.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\dblemth.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\dbleqtr.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\document.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\DoubleAnnualRW.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\floatann.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\floatmth.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\floatqtr.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\genfile.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\intann.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\NumPunct.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\outfile.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\OutfileHTML.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\page.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\PageOut.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\Path.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\PiaException.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\qtryear.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\Sex.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\ssn.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\StringParser.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\TextWriterTraceListener.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\Trace.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\TraceListener.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\age.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AnnualArrays.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BitAnnual.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\cminmax.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\comma.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\date.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DateFormatter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\datemodyyr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\datemoyr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\dbleann.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\dblemth.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\dbleqtr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\document.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DoubleAnnualRW.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\floatann.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\floatmth.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\floatqtr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\FormatString.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\genfile.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\intann.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\NumPunct.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\outfile.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\OutfileHTML.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\page.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PageOut.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Path.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\pathname.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaException.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\qtryear.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Sex.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ssn.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\StringParser.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TextWriterTraceListener.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Trace.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TraceListener.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\misc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{20C9AA7B-AFDC-3E09-9840-7ECD1AFBEA30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{E64BA204-61B2-3B78-A77E-462D1FE8B8C4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

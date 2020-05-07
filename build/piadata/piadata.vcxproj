@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{75BE65C3-E676-3D25-9075-9092674AB8FD}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>piadata</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">piadata.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">piadata</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">piadata.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">piadata</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_LIB;_MBCS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_MBCS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;_MBCS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_MBCS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/oactobjs32/piadata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/anypia32" "-BC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build" --check-stamp-file "C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build/piadata/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\Default.cmake;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\piadata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/oactobjs32/piadata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/anypia32" "-BC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build" --check-stamp-file "C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build/piadata/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\Default.cmake;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\piadata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Assumptions.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AssumptionsFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AssumptionsNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AssumptionType.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\avgwg.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\awbidat.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AwbiDataFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AwbiDataNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\awinc.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AwincDoc.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AwincFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\AwincNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BaseChangeType.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\baseyear.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BaseYearFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BaseYearNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\bendmfb.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\bendpia.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BendPoints.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BenefitAmount.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BenefitAmountArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\bic.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\biproj.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BiprojFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BiprojNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\BitAnnual.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\bpmfbout.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\bppiaout.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\cachup.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\cachupf.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\CatchupFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\CatchupNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ChildCareCalc.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ChildCareCalcLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\comppd.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\config.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ConfigFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ConfigNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DebugCase.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DibGuar.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DibGuarLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\dinscode.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DisabPeriod.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\DisInsCodeArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\EarnProject.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\FieldOfficeInfoFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\FieldOfficeInfoNonFile.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\foinfo.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\FrozMin.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\frzyrs.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\inscode.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\InsCodeArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChange.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeAGE65COMP.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeALLEARN.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeBPFRACWAGE.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeBPMINCONST.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeBPSPECRATE.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeCHILDCARECREDIT.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeCHILDCAREDROPOUT.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeCOLACHANGE.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeDECLINEPERC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeDROPOUTCHG.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeMARRLENGTH.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeNEWFORMULA.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeNEWSPECMIN.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeNRACHANGE.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangePSAACCT.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeRead.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeTAXBENCHG.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeTAXRATECHG.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeWAGEBASECHG.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeWIDFACTOR.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeWIFEFACTOR.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\LawChangeWrite.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\MilServDatesVec.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\msdates.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\oactcnst.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\OldPia.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\OldStart.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\OldStartLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\pebs.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\percmfb.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\percpia.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PercPiaOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piacal.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaCalAny.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaCalLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaCalPL.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piadata.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiadataArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaMethod.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaParamsLCTR.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaParamsTR.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piaparms.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piaparmsAny.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piaparmsLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piaparmsPL.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piaread.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piareadAny.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaTable.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PiaTableLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piawrite.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\piawriteAny.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\pibtable.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Pifc.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\PortionAime.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Psa.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\qc.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\qcamt.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\QcArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\QcPacked.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\railroad.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ReindWid.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ReindWidLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Resource.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\RetireTest.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\rtgenrl.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ScaledEarnFactors.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Secondary.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\SecondaryArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Sga.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\SgaDerived.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\SgaGeneral.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\SpecMin.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\SpecMinLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\ssn.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxBenefits.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxBenefitsLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxData.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxRates.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxRatesLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TaxRatesPL.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TransGuar.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\TransGuarLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\UserAssumptions.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WageBase.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WageInd.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WageIndGeneral.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WageIndLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WageIndNonFreeze.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\wbgenrl.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\wbgenrlLC.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WorkerDataArray.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\WorkerDataGeneral.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\wrkrdata.h" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Assumptions.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\AssumptionsFile.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\AssumptionsNonFile.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\AssumptionType.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\avgwg.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awbidat.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awbidtfl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awbidtnf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awinc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\AwincDoc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awincfl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\awincnf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\BaseChangeType.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\baseyear.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\baseyrfl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\baseyrnf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\bendmfb.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\bendpia.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\BendPoints.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\BenefitAmount.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\BenefitAmountArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Bic.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\biproj.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\biprojfl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\biprojnf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\bpmfbout.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\bppiaout.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\cachpdoc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\cachup.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\cachupfl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\cachupnf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\ChildCareCalc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\ChildCareCalcLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\CompPeriod.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\config.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\configFile.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\configNonFile.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\DebugCase.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\DibGuar.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\DibGuarLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\dinscode.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\DisabPeriod.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\DisInsCodeArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\EarnProject.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\foinfo.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\foinfofl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\foinfonf.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\FrozMin.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\frzyrs.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\inscode.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\InsCodeArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChange.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeAGE65COMP.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeALLEARN.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeBPFRACWAGE.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeBPMINCONST.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeBPSPECRATE.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeCHILDCARECREDIT.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeCHILDCAREDROPOUT.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeCOLACHANGE.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeDECLINEPERC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeDROPOUTCHG.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeMARRLENGTH.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeNEWFORMULA.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeNEWSPECMIN.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeNRACHANGE.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangePSAACCT.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeRead.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeTAXBENCHG.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeTAXRATECHG.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeWAGEBASECHG.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeWIDFACTOR.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeWIFEFACTOR.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\LawChangeWrite.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\msdates.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\msdatesvec.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\oldpia.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\oldstart.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\OldStartLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pebs.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\percmfb.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\percpia.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PercPiaOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piacal.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piacalany.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piacallc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaCalPL.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piadata.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiadataArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaMethod.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaParamsLCTR.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaParamsTR.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piaparms.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piaparmsAny.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piaparmsLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piaparmsPL.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piaread.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piareadAny.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaTable.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PiaTableLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piawrite.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\piawriteAny.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib50mfb.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib50pib.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib52ame.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib52mfb.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib54ame.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib54mfb.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib54pia.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib58ame.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\pib58pib.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Pifc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PortionAime.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\PresValFacs.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Psa.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\qc.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\qcamt.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\QcArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\QcPacked.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\railroad.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\ReindWid.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\ReindWidLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\RetireTest.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\rtgenrl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\ScaledEarnFactors.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Secondary.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\SecondaryArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\Sga.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\SgaDerived.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\SgaGeneral.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\SpecMin.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\SpecMinLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxBenefits.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxBenefitsLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxData.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxRates.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxRatesLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TaxRatesPL.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TransGuar.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\TransGuarLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\UserAssumptions.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WageBase.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WageInd.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WageIndGeneral.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WageIndLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WageIndNonFreeze.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\wbgenrl.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\wbgenrlLC.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WorkerDataArray.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\WorkerDataGeneral.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piadata\wrkrdata.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\ZERO_CHECK.vcxproj">
+      <Project>{759636AE-6CDD-3E96-93F2-26C923F40CFB}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

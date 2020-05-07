@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D4ADCAFC-E35A-3547-BFA6-44E20A6D942B}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>piaout</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">piaout.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">piaout</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">piaout.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">piaout</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_LIB;_MBCS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_MBCS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;_MBCS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_MBCS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\include;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\windows;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\..\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/oactobjs32/piaout/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/anypia32" "-BC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build" --check-stamp-file "C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build/piaout/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\Default.cmake;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\piaout\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/oactobjs32/piaout/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/anypia32" "-BC:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build" --check-stamp-file "C:/Users/Thad Kerosky/Documents/GitHub/anypia-js-32/build/piaout/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\Default.cmake;C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\piaout\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\res\Anypia32.ico" />
+    <None Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\res\Anypia32Doc.ico" />
+    <None Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\res\Toolbar.bmp" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\anypia32\resource.hm" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\AnypiaOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ChildCareCalc1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ChildCareCalc2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\DibGuarPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\EarningsPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\FamilyPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\FrozMinPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\InsuredPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OldStart1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OldStart2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OnePage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsCreditInfo.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsEarnings.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsEarningsInfo.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsLetter.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOasdiEst.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOasdiInfo.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsPageOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsWorkerEarnings.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsWorkerInfo.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaPageOut.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaTable1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaTable2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ReindWid1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ReindWid2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\include\Resource.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SpecMin1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SpecMin2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary3Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SummaryPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TaxesPage.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TransGuar1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TransGuar2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageInd1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageInd2Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageIndNonFreeze1Page.h" />
+    <ClInclude Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageIndNonFreeze2Page.h" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\AnypiaOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ChildCareCalc1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ChildCareCalc2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\DibGuarPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\EarningsPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\FamilyPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\FrozMinPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\InsuredPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OldStart1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OldStart2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\OnePage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsCreditInfo.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsEarnings.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsEarningsInfo.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsLetter.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOasdiEst.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOasdiInfo.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsPageOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsWorkerEarnings.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PebsWorkerInfo.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaPageOut.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaTable1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\PiaTable2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ReindWid1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\ReindWid2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SpecMin1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SpecMin2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\Summary3Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\SummaryPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TaxesPage.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TransGuar1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\TransGuar2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageInd1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageInd2Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageIndNonFreeze1Page.cpp" />
+    <ClCompile Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\oactobjs32\piaout\WageIndNonFreeze2Page.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Thad Kerosky\Documents\GitHub\anypia-js-32\build\ZERO_CHECK.vcxproj">
+      <Project>{759636AE-6CDD-3E96-93F2-26C923F40CFB}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
