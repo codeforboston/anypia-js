@@ -38,6 +38,10 @@ Debug Assertion Failed!: Program: anypia32.exe
 File: F:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\apphelp.cpp Line: 27
 For information on how your program can cause an assertion failure see Visual C++ documention on asserts, retry to debug the application
 ```
+To build command line for Windows with CMake:
+- `"C:\Program Files\CMake\bin\cmake.exe"  -S anypiab -B buildanypiab`
+
+- https://emscripten.org/docs/compiling/Building-Projects.html?highlight=cmake
 
 To setup emscripten itself, loosely [based off this resource](https://mirano.blog/emscripten/):
 - run `python` and if it launches Microsoft Store, install it.
@@ -49,5 +53,16 @@ To setup emscripten itself, loosely [based off this resource](https://mirano.blo
 - `./emsdk activate latest` Make the "latest" SDK "active" for the current user. (writes ~/.emscripten file)
 - `emsdk_env.bat`
 - if it worked, you should be able to check the install with `emcc -v`
+
+To Build with Emscripten and CMake:
+- review this resource https://diharaw.github.io/blog/emscripten-cmake-tutorial/
 - go back to anypia-js repository
+- `cd boost_1_64_0`
+- `./bootstrap.bat`
+- `./b2.exe toolset=emscripten link=static runtime-link=static threading=multi --with-date_time` (not working)
+- ` emcmake "C:\Program Files\CMake\bin\cmake.exe"  -S anypiab -B buildanypiab-emcc` (tries to use MSBuild, bad)
+- `emcmake "C:\Program Files\CMake\bin\cmake.exe"  -S anypiab -B buildanypiab-emcc24 -G "NMake Makefiles"` (uses NMake Makefiles, good)
+- `copy Tools.ini buildanypiab-emcc24\`
+- `cd buildanypiab-emcc24`
+- `"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\nmake"`
 

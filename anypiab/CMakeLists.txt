@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 3.13.0 FATAL_ERROR)
 
 project(anypiab C CXX)
+#set(CMAKE_VERBOSE_MAKEFILE ON)
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
 ################################################################################
-if(NOT CMAKE_VS_PLATFORM_NAME)
-    set(CMAKE_VS_PLATFORM_NAME "x64")
-endif()
-message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
-
-if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "Win32"))
-    message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
-endif()
+#TDK: doesn't apply for emscripten and -G "NMake Makefile"
+##########
+#if(NOT CMAKE_VS_PLATFORM_NAME)
+#    set(CMAKE_VS_PLATFORM_NAME "x64")
+#endif()
+#message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
+#
+#if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "Win32"))
+#    message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
+#endif()
 
 ################################################################################
 # Global configuration types
@@ -39,7 +42,7 @@ if(MSVC)
     set(CMAKE_C_FLAGS_ANYPIACRELEASE "")
     set(CMAKE_C_FLAGS_DEBUG "")
     set(CMAKE_C_FLAGS_RELEASE "")
-    set(CMAKE_CXX_FLAGS "")
+    set(CMAKE_CXX_FLAGS "/EHsc")
     set(CMAKE_CXX_FLAGS_ANYPIABDEBUG "")
     set(CMAKE_CXX_FLAGS_ANYPIABRELEASE "")
     set(CMAKE_CXX_FLAGS_ANYPIACDEBUG "")
@@ -174,6 +177,14 @@ use_props(${PROJECT_NAME} "${CMAKE_CONFIGURATION_TYPES}" "${DEFAULT_CXX_PROPS}")
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VS_GLOBAL_KEYWORD "Win32Proj"
 )
+
+############
+# TDK: https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+############
+#set_target_properties (${PROJECT_NAME} PROPERTIES 
+#COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0" LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+#)
+
 ################################################################################
 # Target name
 ################################################################################
@@ -333,8 +344,15 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     piaout
     windows
 )
-
-target_link_directories(${PROJECT_NAME} PUBLIC
-    "${CMAKE_CURRENT_SOURCE_DIR}/../oactobjs32/boost_1_64_0/stage/lib"
+############
+# https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+############
+set_target_properties (${PROJECT_NAME} PROPERTIES 
+COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
 )
+# target_link_directories(${PROJECT_NAME} PUBLIC
+#     "${CMAKE_CURRENT_SOURCE_DIR}/../oactobjs32/boost_1_64_0/stage/lib"
+# )
+
 

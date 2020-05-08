@@ -1,4 +1,6 @@
 project(piaout CXX)
+set(CMAKE_CXX_FLAGS "-fdeclspec")
+
 
 ################################################################################
 # Source groups
@@ -119,6 +121,15 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     TARGET_NAME_DEBUG          "piaout"
     TARGET_NAME_RELEASE        "piaout"
 )
+
+
+############
+# https://stackoverflow.com/a/60550627/272018
+############
+set_target_properties (${PROJECT_NAME} PROPERTIES 
+COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+)
 ################################################################################
 # Output directory
 ################################################################################
@@ -209,3 +220,9 @@ if(MSVC)
     )
 endif()
 
+############
+# https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+############
+#set_target_properties( ${PROJECT_NAME} PROPERTIES 
+#    COMPILE_FLAGS "-s USE_BOOST_HEADERS=1" LINK_FLAGS "-s USE_BOOST_HEADERS=1"
+#    )

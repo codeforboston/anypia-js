@@ -1,4 +1,7 @@
 project(misc CXX)
+#set(CMAKE_CXX_FLAGS "/EHsc")
+set(CMAKE_CXX_FLAGS "-fdeclspec")
+
 
 ################################################################################
 # Source groups
@@ -116,6 +119,16 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     OUTPUT_DIRECTORY_DEBUG          "${CMAKE_CURRENT_SOURCE_DIR}/Debug"
     OUTPUT_DIRECTORY_RELEASE        "${CMAKE_CURRENT_SOURCE_DIR}/Release/"
 )
+
+
+############
+# https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+############
+set_target_properties (${PROJECT_NAME} PROPERTIES 
+COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+)
+
 ################################################################################
 # Include directories
 ################################################################################
@@ -123,7 +136,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/..;"
     "${CMAKE_CURRENT_SOURCE_DIR}/../include;"
     "${CMAKE_CURRENT_SOURCE_DIR}/../windows;"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../boost_1_64_0"
+#    "${CMAKE_CURRENT_SOURCE_DIR}/../boost_1_64_0"
 )
 
 ################################################################################
@@ -218,4 +231,3 @@ if(MSVC)
     )
     source_file_compile_options(TraceListener.cpp ${FILE_CL_OPTIONS})
 endif()
-
