@@ -12,7 +12,7 @@
 #include "Resource.h"
 #include "oactcnst.h"
 #include "StringParser.h"
-#include "PercPia.h"
+#include "percpia.h"
 
 using namespace std;
 

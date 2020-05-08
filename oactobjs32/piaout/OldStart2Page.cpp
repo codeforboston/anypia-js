@@ -3,6 +3,7 @@
 
 // $Id: OldStart2Page.cpp 1.26.1.3 2012/09/06 10:39:40EDT 277133 Development  $
 
+#include <cstring>
 #include <iomanip>
 #include "OldStart2Page.h"
 #include "OldStart.h"

@@ -6,8 +6,8 @@
 // printed can be specified in function savecase, at the end of this file.
 
 #include <iostream>
-#include "AnypiabDoc.h"
-#include "AnypiaTestDoc.h"
+#include "anypiabdoc.h"
+#include "anypiatestdoc.h"
 #include "Trace.h"
 #include "TextWriterTraceListener.h"
 

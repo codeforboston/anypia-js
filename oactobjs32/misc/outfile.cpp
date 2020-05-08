@@ -8,7 +8,7 @@
 #include "outfile.h"
 #include "Path.h"
 #include "Trace.h"
-#include "resource.h"
+#include "Resource.h"
 #include "PiaException.h"
 #include "boost/date_time/gregorian/gregorian.hpp"
 

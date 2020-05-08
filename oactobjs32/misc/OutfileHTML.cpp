@@ -4,7 +4,7 @@
 // $Id: OutfileHTML.cpp 1.19 2011/08/12 08:47:01EDT 044579 Development  $
 
 #include <sstream>
-#include "OutFileHTML.h"
+#include "OutfileHTML.h"
 #include "Resource.h"
 #include "PiaException.h"
 #include "NumPunct.h"

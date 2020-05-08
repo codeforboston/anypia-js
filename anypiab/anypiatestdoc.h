@@ -3,8 +3,8 @@
 // Structures used by test version of anypiab.
 
 #include <iostream>
-#include "pia.h"
-#include "piaout/piaout.h"
+#include "PIA.H"
+#include "piaout/PiaOut.h"
 #include "BaseYearNonFile.h"
 #include "AwbiDataNonFile.h"
 #include "AssumptionsNonFile.h"
