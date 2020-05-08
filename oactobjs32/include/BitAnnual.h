@@ -6,7 +6,7 @@
 #pragma once
 
 #include "boost/serialization/access.hpp"
-#include "BitAnnualBase.h"
+#include "windows/BitAnnualBase.h"
 #include "Resource.h"
 #include "PiaException.h"
 
@@ -60,4 +60,4 @@ public:
   void setBit( int year, int bit );
 };
 
-#include "BitAnnualInlines.h"
+#include "windows/BitAnnualInlines.h"
