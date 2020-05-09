@@ -33,3 +33,16 @@ matrix:
         - cd anypiab/build
         - cmake ..
         - make
+    - name: "mac-anypiab"
+      os: osx
+      osx_image: xcode11.4
+      addons:
+        homebrew:
+          packages:
+            - cmake
+            - boost
+      script:
+        - mkdir anypiab/build
+        - cd anypiab/build
+        - cmake ..
+        - make
