@@ -22,3 +22,27 @@ matrix:
         - cd ..
         - cd anypia32
         - MSBuild.exe
+    - name: "linux-anypiab"
+      os: linux
+      dist: bionic
+      addons:
+        apt:
+          packages: libboost-date-time-dev
+      script:
+        - mkdir anypiab/build
+        - cd anypiab/build
+        - cmake ..
+        - make
+    - name: "mac-anypiab"
+      os: osx
+      osx_image: xcode11.4
+      addons:
+        homebrew:
+          packages:
+            - cmake
+            - boost
+      script:
+        - mkdir anypiab/build
+        - cd anypiab/build
+        - cmake ..
+        - make
