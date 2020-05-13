@@ -3,6 +3,13 @@ cmake_minimum_required(VERSION 3.13.0 FATAL_ERROR)
 project(anypiab C CXX)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
+if(CMAKE_CXX_COMPILER MATCHES "/em(-[a-zA-Z0-9.])?(\.bat)?")
+  message(" * C++ compiler: Emscripten")
+  set(CMAKE_CXX_COMPILER_ID "Emscripten")
+else()
+  message(" * C++ compiler: ${CMAKE_CXX_COMPILER_ID}")
+endif()
+
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
 ################################################################################
@@ -344,15 +351,24 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     piaout
     windows
 )
-############
-# https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
-############
-set_target_properties (${PROJECT_NAME} PROPERTIES 
-COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
-LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Emscripten")
+    set(CMAKE_CXX_FLAGS "-fdeclspec")
+    
+    ############
+    # https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+    ############
+    # set_target_properties (${PROJECT_NAME} PROPERTIES 
+    # COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+    # LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+    # )
+    target_link_directories(${PROJECT_NAME} PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}/../oactobjs32/boost_1_64_0/stage/lib"
 )
-# target_link_directories(${PROJECT_NAME} PUBLIC
-#     "${CMAKE_CURRENT_SOURCE_DIR}/../oactobjs32/boost_1_64_0/stage/lib"
-# )
+else()
+     target_link_directories(${PROJECT_NAME} PUBLIC
+         "${CMAKE_CURRENT_SOURCE_DIR}/../oactobjs32/boost_1_64_0/stage/lib"
+     )
+endif()
 
 

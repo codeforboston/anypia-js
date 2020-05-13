@@ -1,6 +1,4 @@
 project(piadata CXX)
-#set(CMAKE_CXX_FLAGS "/EHsc")
-set(CMAKE_CXX_FLAGS "-fdeclspec")
 
 
 ################################################################################
@@ -341,13 +339,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     TARGET_NAME_RELEASE        "piadata"
 )
 
-############
-# https://stackoverflow.com/a/60550627/272018
-############
-set_target_properties (${PROJECT_NAME} PROPERTIES 
-COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
-LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
-)
 ################################################################################
 # Output directory
 ################################################################################
@@ -366,8 +357,26 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/..;"
     "${CMAKE_CURRENT_SOURCE_DIR}/../include;"
     "${CMAKE_CURRENT_SOURCE_DIR}/../windows;"
-#    "${CMAKE_CURRENT_SOURCE_DIR}/../boost_1_64_0"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../boost_1_64_0"
 )
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Emscripten")
+    set(CMAKE_CXX_FLAGS "-fdeclspec")
+    
+    ############
+    # https://stackoverflow.com/questions/15724357/using-boost-with-emscripten
+    ############
+    #set_target_properties (${PROJECT_NAME} PROPERTIES 
+    #COMPILE_FLAGS "-s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+    #LINK_FLAGS "--bind --emrun -s TOTAL_MEMORY=500MB -s USE_BOOST_HEADERS=1 -s DISABLE_EXCEPTION_CATCHING=0"
+    #)
+
+else()
+    set(CMAKE_CXX_FLAGS "/EHsc")
+    #target_include_directories(${PROJECT_NAME} PUBLIC
+    #    "${CMAKE_CURRENT_SOURCE_DIR}/../boost_1_64_0"
+    #)
+endif()
 
 ################################################################################
 # Compile definitions
