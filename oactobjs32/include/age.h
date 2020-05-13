@@ -7,6 +7,11 @@
 #include <string>
 #include "boost/serialization/access.hpp"
 
+extern "C"{
+  const char* GetAge();
+  int GetMonths();
+}
+
 /// <summary>Manages a year and month age stored as integers.</summary>
 ///
 /// <remarks>The year and month are stored as 16-bit unsigned shorts to save
@@ -96,3 +101,8 @@ public:
   std::string toString() const;
   std::string toString( const std::string& format ) const;
 };
+
+const char* GetAge(){Age a(10,10);return a.toString().c_str();}
+int GetMonths(){Age a(10,10);return a.toMonths();}
+
+
