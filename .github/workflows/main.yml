@@ -11,7 +11,7 @@ on:
     branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '55 10 27 5 *'
+    - cron:  '55 23 13 5 *'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -37,4 +37,5 @@ jobs:
         ls -lah ./official/
         shasum -a 256 ./oactobjs32.zip
         shasum -a 256 ./source32.zip
+        ls -lah .
         
