@@ -47,3 +47,10 @@ bld/
 *.exe
 *.out
 *.app
+
+#Visual Studio \ VSCode
+*.vs
+*.vcxproj.filters
+*.sdf
+*.opensdf
+*.vscode
