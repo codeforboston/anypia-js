@@ -1,0 +1,3 @@
+function PrintAge() {
+    anypiajs.GetAge();
+}
