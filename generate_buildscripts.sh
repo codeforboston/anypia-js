@@ -4,21 +4,25 @@ do
     filename="./installbuild-$i"
     if test "$i" = 'windows'; then
         #TODO export env on windows
-        extention="bat"
-        echo "SET" `yq -c --raw-output ".matrix.include[] | select(.name == \"windows\") | .env | @sh" .travis.yml | tr -d \'` > "$filename.$extention"
-        echo "choco install wget" >> "$filename.$extention"
-        echo "choco install 7z" >> "$filename.$extention"
+        extension="bat"
+        echo "SET" `yq -c --raw-output ".matrix.include[] | select(.name == \"windows\") | .env | @sh" .travis.yml | tr -d \'` > "$filename.$extension"
+        echo "choco install wget" >> "$filename.$extension"
+        echo "choco install 7z" >> "$filename.$extension"
         #we probably can't use export to set PATH, maybe can just remove the export part?
     elif test "$i" = 'mac-anypiab'; then
-        extention="sh"
-        echo "brew install " `yq -c --raw-output ".matrix.include[] | select(.name == \"mac-anypiab\") | .addons.homebrew.packages | @sh" .travis.yml | tr -d "\'"` > "$filename.$extention"
+        extension="sh"
+        echo "brew install " `yq -c --raw-output ".matrix.include[] | select(.name == \"mac-anypiab\") | .addons.homebrew.packages | @sh" .travis.yml | tr -d "\'"` > "$filename.$extension"
+    elif test "$i" = 'emscripten-anypiab-mac'; then
+        extension="sh"
+        echo "brew install " `yq -c --raw-output ".matrix.include[] | select(.name == \"emscripten-anypiab-mac\") | .addons.homebrew.packages | @sh" .travis.yml | tr -d "\'"` > "$filename.$extension"
     elif test "$i" = 'linux-anypiab'; then
-        extention="sh"
-        echo "apt install " `yq -c --raw-output ".matrix.include[] | select(.name == \"linux-anypiab\") | .addons.apt.packages | @sh" .travis.yml` > "$filename.$extention"
+        extension="sh"
+        echo "apt install " `yq -c --raw-output ".matrix.include[] | select(.name == \"linux-anypiab\") | .addons.apt.packages | @sh" .travis.yml` > "$filename.$extension"
     else
-        extention="sh"
+        extension="sh"
+        echo "" > "$filename.$extension"
     fi
 
-    yq -c --raw-output ".matrix.include[] | select(.name == \"$i\") | .script[]" .travis.yml >> "$filename.$extention"
-    chmod +x "$filename.$extention"
+    yq -c --raw-output ".matrix.include[] | select(.name == \"$i\") | .script[]" .travis.yml >> "$filename.$extension"
+    chmod +x "$filename.$extension"
 done
