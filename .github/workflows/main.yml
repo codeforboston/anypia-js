@@ -34,7 +34,6 @@ jobs:
         wget -O source32.zip https://www.ssa.gov/OACT/anypia/download/source32.zip
         unzip source32.zip -d ./official
         unzip oactobjs32.zip -d ./official
-        mv ./official/source32/* ./official/
         ls -lah ./official/
         shasum -a 256 ./oactobjs32.zip
         shasum -a 256 ./source32.zip
