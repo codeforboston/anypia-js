@@ -5,7 +5,9 @@ do
     if test "$i" = 'windows'; then
         #TODO export env on windows
         extension="bat"
-        echo "SET" `yq -c --raw-output ".matrix.include[] | select(.name == \"windows\") | .env | @sh" .travis.yml | tr -d \'` > "$filename.$extension"
+        #echo "SET" `yq -c --raw-output ".matrix.include[] | select(.name == \"windows\") | .env | @sh" .travis.yml | tr -d \'` > "$filename.$extension"
+        echo "SET MSBUILD_PATH=C:/Program Files (x86)/MSBuild/14.0/Bin;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin" > "$filename.$extension" 
+        echo "SET PATH=%PATH%;%MSBUILD_PATH%" >> "$filename.$extension"
         echo "choco install wget" >> "$filename.$extension"
         echo "choco install 7z" >> "$filename.$extension"
         #we probably can't use export to set PATH, maybe can just remove the export part?
@@ -24,5 +26,10 @@ do
     fi
 
     yq -c --raw-output ".matrix.include[] | select(.name == \"$i\") | .script[]" .travis.yml >> "$filename.$extension"
+    if test "$i" = 'windows'; then
+        # If you don't use call, the batch file stops after the other batch file.
+        sed 's/\.\/bootstrap.bat/call bootstrap.bat/g' "$filename.$extension" > "$filename.$extension.tmp"
+        mv "$filename.$extension.tmp" "$filename.$extension"
+    fi
     chmod +x "$filename.$extension"
 done
