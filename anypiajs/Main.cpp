@@ -1,16 +1,25 @@
 #include <iostream>
-
 #include "Application.h"
+#include "FormatString.h"
 
-//#define WEB_ASSEMBLY
+void AfxFormatString1(std::string& result, unsigned int rsc,
+	const std::string& filler)
+{
+	return;
+}
+
+void AfxFormatString2(std::string& result, unsigned int rsc,
+	const std::string& filler1, const std::string& filler2)
+{
+	return;
+}
 
 #ifdef WEB_ASSEMBLY
-
-Application* g_pApp = 0;
-
-
 extern "C"
 {
+	Application* g_pApp = 0;
+
+
 	void InitalizeApplication()
 	{
 		if (g_pApp)
@@ -24,23 +33,33 @@ extern "C"
 		}
 	}
 
-
 	const char* GetAge()
 	{
 		return g_pApp->GetAge().toString().c_str();
 	}
+
+	const char* GetCalc()
+	{
+		return  g_pApp->Calc().c_str();
+	}
 }
 
-#else
+//
+//#else
+//	void InitalizeApplication();
+//	const char* GetAge();
+//	const char* GetCal();
+#endif
 
+
+
+#ifndef WEB_ASSEMBLY
 int main(int ac, char** av)
 {
 	Application app;
 	app.Initialize();
-
-	Age age = app.GetAge();
-
-	std::cout << "Age: " << age.toString() << std::endl;
+	std::cout << app.Calc() << std::endl;
+	std::cout << "Age: " << app.GetAge().toString() << std::endl;
 
 	system("pause");
 

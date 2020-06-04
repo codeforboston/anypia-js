@@ -89,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\oactobjs32;$(ProjectDir)..\oactobjs32\include;$(ProjectDir)..\oactobjs32\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\oactobjs32\windows;$(ProjectDir)..\oactobjs32;$(ProjectDir)..\oactobjs32\include;$(ProjectDir)..\oactobjs32\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -143,10 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="anypiajs.cpp" />
+    <ClCompile Include="anypiatestdoc.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="anypiatestdoc.h" />
     <ClInclude Include="Application.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

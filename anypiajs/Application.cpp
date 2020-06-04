@@ -3,6 +3,7 @@
 
 Application::Application()
 {
+	m_pDoc = new AnypiaTestDoc();
 }
 
 Application::~Application()
@@ -21,3 +22,11 @@ Age Application::GetAge()
 
 }
 
+std::string Application::Calc()
+{
+	std::string strResult;
+
+	strResult = m_pDoc->calculate();
+
+	return strResult;
+}

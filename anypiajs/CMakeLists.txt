@@ -27,6 +27,7 @@ add_subdirectory(../oactobjs32/windows ${CMAKE_BINARY_DIR}/windows)
 set(SOURCES
     "Main.cpp"
     "Application.cpp"
+    "anypiatestdoc.h"
 )
 
 find_package(Boost 1.64.0 REQUIRED COMPONENTS date_time)
