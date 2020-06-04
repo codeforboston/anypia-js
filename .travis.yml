@@ -95,15 +95,11 @@ matrix:
         - cd boost_1_64_0
         - ./bootstrap.bat
         - ./b2.exe toolset=msvc-14.0 link=static address-model=32 architecture=x86 runtime-link=static threading=multi --layout=versioned --with-date_time
-        - #SET BOOST_INCL="%cd%"
-        - #SET BOOST_LIB="%cd%\stage\lib"
         - export BOOST_INCL="`pwd`"
         - export BOOST_LIB="`pwd`\stage\lib"
         - cd ../..
         - cd anypiab
         - mkdir build
         - cd build
-        - pwd
-        - #emcmake cmake -DBOOST_ROOT=%BOOST_INCL% -DBOOST_INCLUDE_DIR=%BOOST_INCL% -DBOOST_LIBRARYDIR=%BOOST_LIB%  -G "NMake Makefiles" ..
-        - ../../emsdk/upstream/emscripten/emcmake cmake -DBOOST_ROOT=$BOOST_INCL -DBOOST_INCLUDE_DIR=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB -G "NMake Makefiles" ..
+        - ../../emsdk/upstream/emscripten/emcmake cmake -DBOOST_ROOT=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB -G "NMake Makefiles" ..
         - nmake
