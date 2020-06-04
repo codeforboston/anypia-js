@@ -2,11 +2,11 @@
 
 let anypiajs = {}
 
-
-
 function SetupInterface() {
-    // anypiajs.GetAge = self.Module.cwrap('GetAge', 'string', []);
-    anypiajs.GetAge = function() { console.log("Getting age") }
+    // anypiajs.GetAge = ;
+    anypiajs.GetAge = function() { console.log("self.Module.cwrap('GetAge', 'string', [])") }
+    // anypiajs.GetCalc = function() {  }
+    anypiajs.GetCalc = function() { console.log("self.Module.cwrap('GetCalc', 'string', [])") }
 }
 
 SetupInterface();
