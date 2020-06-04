@@ -110,10 +110,8 @@ AnypiabDoc::~AnypiabDoc()
 //      0 : No error.
 //      1 : Error that stops file processing.
 //      2 : Error that only affects some cases.  
-int AnypiabDoc::calculate(const string& strData)
+int AnypiabDoc::calculate()
 {
-   ostream os;
-   os << strData;
    ifstream in;  // stream with case to read
    char ernfil[80];  // name of file with stored case
    int ierr = 0;  // error indicator
@@ -152,8 +150,6 @@ int AnypiabDoc::calculate(const string& strData)
    // read multiple files, each with one case
    while (cin >> ernfil) {
       infile = Path::changeExtension(ernfil, "pia");
-
-
       in.clear();
       in.open(infile.c_str());
       if (in.fail()) {
