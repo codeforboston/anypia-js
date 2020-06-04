@@ -71,3 +71,39 @@ matrix:
         - cd anypiab/build
         - emcmake cmake -DBOOST_INCLUDEDIR=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB ..
         - make -j2
+    - os: windows
+      name: "emscripten-anypiab-windows"
+      python: "3.8"
+      before_install:
+        - choco install python3 --version=3.8
+        - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+      env:
+        - MSBUILD_PATH="/C/Program Files (x86)/MSBuild/14.0/Bin:/C/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin"
+      script:
+        - python --version
+        - echo "available python version must be greater than 2.7.13 or pip install certifi"
+        - git clone https://github.com/emscripten-core/emsdk.git
+        - cd emsdk
+        - ./emsdk.bat install latest
+        - ./emsdk.bat activate latest
+        - cd .. 
+        - choco install vcbuildtools -ia "/InstallSelectableItems Win81SDK_CppBuildSKUV1;VisualCppBuildTools_ATLMFC_SDK"
+        - export PATH=$MSBUILD_PATH:$PATH
+        - cd oactobjs32
+        - wget -q "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
+        - 7z x -bd boost_1_64_0.zip
+        - cd boost_1_64_0
+        - ./bootstrap.bat
+        - ./b2.exe toolset=msvc-14.0 link=static address-model=32 architecture=x86 runtime-link=static threading=multi --layout=versioned --with-date_time
+        - #SET BOOST_INCL="%cd%"
+        - #SET BOOST_LIB="%cd%\stage\lib"
+        - export BOOST_INCL="`pwd`"
+        - export BOOST_LIB="`pwd`\stage\lib"
+        - cd ../..
+        - cd anypiab
+        - mkdir build
+        - cd build
+        - pwd
+        - #emcmake cmake -DBOOST_ROOT=%BOOST_INCL% -DBOOST_INCLUDE_DIR=%BOOST_INCL% -DBOOST_LIBRARYDIR=%BOOST_LIB%  -G "NMake Makefiles" ..
+        - ../../emsdk/upstream/emscripten/emcmake cmake -DBOOST_ROOT=$BOOST_INCL -DBOOST_INCLUDE_DIR=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB -G "NMake Makefiles" ..
+        - nmake
