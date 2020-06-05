@@ -4,6 +4,7 @@ oactobjs32/boost_1_64_0.zip
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
+[Bb]uild/
 [Rr]elease/
 [Rr]eleases/
 x64/
@@ -14,6 +15,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+venv/
 
 # Prerequisites
 *.d
