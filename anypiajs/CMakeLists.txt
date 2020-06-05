@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_VERBOSE_MAKEFILE on)
+
 project(anypiajs)
 
 if(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
@@ -50,9 +52,24 @@ endif()
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-if(NOT DEFINED ANYPIATEST)
-    add_compile_definitions("ANYPIAB")
-endif(NOT DEFINED ANYPIATEST)
+set(EXPORTED_FUNCTIONS "-s EXPORTED_FUNCTIONS=\"[\
+	'_GetAge',\
+	'_GetCalc',\
+	'_GetYears',\
+	'_InitalizeApplication']\"")
+	
+set(EXPORTED_RUNTIME_METHODS "-s EXTRA_EXPORTED_RUNTIME_METHODS=\"['ccall', 'cwrap']\"")
+
+add_compile_definitions("WEB_ASSEMBLY")
+
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS " ${EXPORTED_FUNCTIONS} ${EXPORTED_RUNTIME_METHODS}")
+#set(EMCC_CFLAGS "${EMCC_CFLAGS} ")
+#set(EMCC_CFLAGS "${EMCC_CFLAGS} -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']")
+
+
+#if(NOT DEFINED ANYPIATEST)
+#    add_compile_definitions("ANYPIAB")
+#endif(NOT DEFINED ANYPIATEST)
 # On Linux, the order of these libraries matters!
 target_link_libraries(${PROJECT_NAME} PUBLIC
     piadata

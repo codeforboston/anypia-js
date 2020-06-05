@@ -31,6 +31,8 @@ extern "C"
 			g_pApp = new Application();
 			g_pApp->Initialize();
 		}
+
+		std::cout << "Application Intitalized" << std::endl;
 	}
 
 	const char* GetAge()
@@ -41,6 +43,13 @@ extern "C"
 	const char* GetCalc()
 	{
 		return  g_pApp->Calc().c_str();
+	}
+
+	int GetYears()
+	{
+		int iNumYears = g_pApp->GetAge().getYears();
+		std::cout << iNumYears << std::endl;
+		return iNumYears;
 	}
 }
 

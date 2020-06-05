@@ -1,7 +1,16 @@
+function Init() {
+    SetupInterface();
+}
+
+
 function PrintAge() {
     anypiajs.GetAge();
 }
 
-function GetCalc() {
+function GetTestDoc() {
     anypiajs.GetCalc();
+}
+
+function GetYearOld() {
+    anypiajs.GetYears();
 }
