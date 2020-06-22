@@ -1,4 +1,4 @@
-// $Id: anypiatestdoc.cpp 1.16 2012/03/13 08:40:42EDT 277133 Development  $
+// $Id: anypiabdoc.cpp 1.25 2012/03/13 08:40:42EDT 277133 Development  $
 //
 // This program reads a series of cases in standard anypia format, computes
 // a primary insurance amount and associated data for each one, and prints
@@ -10,7 +10,7 @@
 #endif
 #include <fstream>
 #include <iomanip>
-#include "anypiatestdoc.h"
+#include "anypiabdoc.h"
 #include "genfile.h"
 #include "PiadataArray.h"
 #include "UserAssumptions.h"
@@ -19,21 +19,17 @@
 #include "piaparmsAny.h"
 #include "wrkrdata.h"
 #include "WorkerDataArray.h"
+#include "PiaTable.h"
+#include "Path.h"
 #include "DateFormatter.h"
 #ifdef DETAILS
 #include "outfile.h"
 #include "OutFile80.h"
 #include "TaxData.h"
 #endif
-
-
-#ifdef WEB_ASSEMBLY
-EMSCRIPTEN_BINDINGS(test_doc) {
-   emscripten::class_<AnypiaTestDoc>("TestDoc")
-   .constructor<>()
-   .function("clac", &AnypiaTestDoc::calculate);
-}
-#endif
+// uncomment the following line to use one file with multiple cases (anypiab);
+// otherwise the program expects multiple files, each with one case (anypiac)
+// #define ONEBIGFILE
 
 using namespace std;
 
@@ -49,8 +45,22 @@ extern char *optarg;  // option argument
 #define ANYPIA "anypia"
 #endif
 
+
+
+#ifdef WEB_ASSEMBLY
+#include <emscripten.h>
+#include <emscripten/bind.h>
+
+EMSCRIPTEN_BINDINGS(PIA_DOC) {
+	emscripten::class_<AnypiabDoc>("PIADoc")
+		.constructor<>()
+		.function("clac", &AnypiabDoc::calculate);
+}
+
+#endif
+
 // Description: Constructor.
-AnypiaTestDoc::AnypiaTestDoc()
+AnypiabDoc::AnypiabDoc()
 {
    WorkerData::setQcLumpYear(1977);
    WorkerDataGeneral::setMaxyear(YEAR2090);
@@ -85,7 +95,7 @@ AnypiaTestDoc::AnypiaTestDoc()
 }
 
 // Description: Destructor.
-AnypiaTestDoc::~AnypiaTestDoc()
+AnypiabDoc::~AnypiabDoc()
 {
 #ifdef DETAILS
    delete taxData;
@@ -114,90 +124,65 @@ AnypiaTestDoc::~AnypiaTestDoc()
 //      0 : No error.
 //      1 : Error that stops file processing.
 //      2 : Error that only affects some cases.  
-std::string AnypiaTestDoc::calculate()
+std::string AnypiabDoc::calculate(std::string strPiaDoc)
 {
+   ifstream in;  // stream with case to read
+   char ernfil[80];  // name of file with stored case
    int ierr = 0;  // error indicator
    int rval = 0;
-   // Genfile outfile("output");  // output file name
-   ofstream out;  // output stream
-   stringstream ss;
+   ostringstream oss;
 
-#ifdef DETAILS
-   OutFile80 outfl("details");
-   outfl.openout();
-#endif
 
-   // try {
-   //    outfile.openout(out);
-   // } catch (PiaException e) {
-   //    cerr << e.what() << endl;
-   //    return(1);
-   // }
    userAssumptions->setIstart(piaparms->getIstart());
+      try {
+         
+         workerData->deleteContents();
+         piaData->deleteContents();
+         earnProject->deleteContents();
+         widowDataArray->deleteContents();
+         widowPiaDataArray->deleteContents();
+         secondaryArray->deleteContents();
 
-   try {
-      workerData->deleteContents();
-      piaData->deleteContents();
-      earnProject->deleteContents();
-      widowDataArray->deleteContents();
-      widowPiaDataArray->deleteContents();
-      secondaryArray->deleteContents();
-      workerData->ssn.setSsnFull("123450001");
-      workerData->setSex(Sex::MALE);
-      workerData->setBirthDate(boost::gregorian::date(1940,1,15));
-      workerData->setJoasdi(WorkerDataGeneral::OLD_AGE);
-      workerData->setEntDate(DateMoyr(7,2005));
-      workerData->setBenefitDate();
-      workerData->setIbegin(1962);
-      workerData->setIend(2004);
-      earnProject->setFirstYear(1962);
-      earnProject->setLastYear(2004);
-      earnProject->setProjback(1);
-      earnProject->setPercback(0.00f);
-     earnProject->setFirstYear(2004);
-      workerData->setNhname("Sample 1");
-      earnProject->setEarntype(2004, 1);
-      userAssumptions->setIaltbi(2);
-      userAssumptions->setIaltaw(2);
-      userAssumptions->setIbasch(1);
-      workerData->setQctd(64);
-      workerData->setQc51td(64);
-      DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? 
-         secondaryArray->secondary[0]->entDate : 
-         workerData->getEntDate();
-      piacal->dataCheck(entDate);
-      piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
-         *secondaryArray);
-      piacal->calculate1(*assumptions);
-      // find the date of entitlement to use to calculate the pia
-      // compute regular pias and primary benefit
-      piacal->calculate2(entDate);
-      piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
-         *secondaryArray);
-      piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
-      savecase(ss);
-      //nonins(out);
-      //if (workerData->getJoasdi() == WorkerData::DISABILITY)
-      //   disinsout(out);
-#ifdef DETAILS
-      // print detailed results for each non-statement case
-      if (workerData->getJoasdi() != WorkerData::PEBS_CALC) {
-         piaOut->onePage.prepareStrings();
-         piaOut->onePage.print(outfl);
+		 std::istringstream is(strPiaDoc);
+
+         ierr = piaread->read(is);
+
+         if (ierr == 0 || ierr == PIA_IDS_READEOF || 
+             ierr == PIA_IDS_READMORE) {
+           DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? 
+              secondaryArray->secondary[0]->entDate : 
+              workerData->getEntDate();
+           piacal->dataCheck(entDate);
+           piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
+              *secondaryArray);
+           piacal->calculate1(*assumptions);
+           // find the date of entitlement to use to calculate the pia
+           // compute regular pias and primary benefit
+           piacal->calculate2(entDate);
+           piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
+              *secondaryArray);
+           piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
+           savecase(oss);
+           //nonins(out);
+           //if (workerData->getJoasdi() == WorkerData::DISABILITY)
+           //   disinsout(out);
+         } else {
+           PiaException e(ierr);
+           cerr << workerData->getIdString() << ": ";
+           cerr << e.what() << " in file read" << endl;
+		   rval = 2;
+         }
+      // no problem with calculation
+      } catch (PiaException e) {
+         cerr << workerData->getIdString() << ": ";
+         cerr << e.what() << " in calculation" << endl;
+		   rval = 2;
+         // continue with next case
       }
-#endif
-   // no problem with calculation
-   } catch (PiaException e) {
-      cout << e.what() << " in calculation" << endl;
-      rval = 2;
-      string strCal = "Invliad";
-      // continue with next case
-   }
-#ifdef DETAILS
-   outfl.closeout();
-#endif
 
-   return ss.str();
+	string strResult = oss.str();
+
+   return strResult;
 }
 
 // Description: Writes out 1 line of results, if a primary beneficiary or a
@@ -206,7 +191,7 @@ std::string AnypiaTestDoc::calculate()
 //
 // Arguments:
 //   out: Output stream.
-void AnypiaTestDoc::savecase( std::stringstream& out )
+void AnypiabDoc::savecase( std::ostream& out )
 {
    char insCode = piaData->getFinsCode2();
    char insStat = 'T';
@@ -219,7 +204,7 @@ void AnypiaTestDoc::savecase( std::stringstream& out )
    }
    if (workerData->getJoasdi() == WorkerData::PEBS_CALC) {
       out << workerData->ssn.toString();
-	   out << setprecision(0) << setfill(' ');
+	  out << setprecision(0) << setfill(' ');
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_EARLY);
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_FULL);
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_DELAYED);
@@ -238,7 +223,23 @@ void AnypiaTestDoc::savecase( std::stringstream& out )
          out << setw(8) << piaData->highPia.get();
          out << setw(8) << piaData->highMfb.get();
          out << setw(8) << piaData->roundedBenefit.get();
-         out << " " ;
+         // Uncomment the following for an output of AME for requests.
+         //if (piacal->wageInd != static_cast<WageInd*>(0)) {
+         //   out << setw(8) << piacal->wageInd->getAme();
+         //} else {
+         //   out << setw(8) << 0.0;
+         //}
+         //if (piacal->piaTable != static_cast<PiaTable*>(0)) {
+         //   out << setw(8) << piacal->piaTable->getAme();
+         //} else {
+         //   out << setw(8) << 0.0;
+         //}
+         //if (piacal->oldStart != static_cast<OldStart*>(0)) {
+         //   out << setw(8) << piacal->oldStart->getAme();
+         //} else {
+         //   out << setw(8) << 0.0;
+         //}
+         out << " ";
          out << piaData->ageBen.toString("f");
          out << " " << piaData->getPifc();
          // bic A for primary
@@ -249,7 +250,7 @@ void AnypiaTestDoc::savecase( std::stringstream& out )
          out << workerData->ssn.toString();
          out << " "
             << DateFormatter::toString(widowDataArray->workerData[i]->getBirthDate(),"s");
-		 out << setprecision(2) << setfill(' ');
+		 out << setprecision(2)  << setfill(' ');
          out << setw(8) << piaData->highPia.get();
          out << setw(8) << piaData->highMfb.get();
          Secondary *secondary = piacal->secondaryArray.secondary[i];
@@ -273,7 +274,7 @@ void AnypiaTestDoc::savecase( std::stringstream& out )
 //
 // Arguments:
 //   out: Output stream.
-void AnypiaTestDoc::nonins( std::ofstream& out )
+void AnypiabDoc::nonins( std::ostream& out )
 {
    switch (piaData->getFinsCode2())
    {
@@ -302,7 +303,7 @@ void AnypiaTestDoc::nonins( std::ofstream& out )
 //
 // Arguments:
 //   out: Output stream.
-void AnypiaTestDoc::disinsout( std::ofstream& out )
+void AnypiabDoc::disinsout( std::ostream& out )
 {
    if (!piaData->disInsCode.isDisabilityInsured()) {
       out << "Preceding case not disability insured" << endl;

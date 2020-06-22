@@ -41,6 +41,7 @@ set(SOURCES
     "Main.cpp"
     "Application.cpp"
     "anypiatestdoc.cpp"
+    "anypiabdoc.cpp"
 )
 
 find_package(Boost 1.64.0 REQUIRED COMPONENTS date_time)
@@ -62,7 +63,7 @@ set(EXPORTED_RUNTIME_METHODS "-s EXTRA_EXPORTED_RUNTIME_METHODS=\"['ccall', 'cwr
 
 add_compile_definitions("WEB_ASSEMBLY")
 
-set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS " ${EXPORTED_FUNCTIONS} ${EXPORTED_RUNTIME_METHODS}")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS " --bind ${EXPORTED_FUNCTIONS} ${EXPORTED_RUNTIME_METHODS}")
 #set(EMCC_CFLAGS "${EMCC_CFLAGS} ")
 #set(EMCC_CFLAGS "${EMCC_CFLAGS} -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']")
 

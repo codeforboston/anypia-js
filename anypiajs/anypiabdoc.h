@@ -1,14 +1,12 @@
-// $Id: anypiatestdoc.h 1.3 2005/12/01 11:15:05EST 277133 Exp  $
+// $Id: anypiabdoc.h 1.4 2005/12/01 11:15:05EST 277133 Exp  $
 //
-// Structures used by test version of anypiab.
-#pragma once
+// Structures used by anypiab.
+
 #include <iostream>
 #include "piadata.h"
 #include "pebs.h"
 #include "piaparms.h"
 #include "piacal.h"
-
-
 #include "piaout/PiaOut.h"
 #include "BaseYearNonFile.h"
 #include "AwbiDataNonFile.h"
@@ -17,24 +15,17 @@
 #include "piareadAny.h"
 #include "PiaCalAny.h"
 #include "PiaException.h"
-
-#ifdef WEB_ASSEMBLY
-#include <emscripten.h>
-#include <emscripten/bind.h>
-#endif
-
 class WorkerData;
 class PiaData;
 class WorkerDataArray;
 class PiaDataArray;
 
-class AnypiaTestDoc
+class AnypiabDoc
 {
    public:
       // base year.
       BaseYearNonFile *baseyear;
-      // historical benefit increases and average wages
-      AwbiDataNonFile *awbidat;
+      AwbiDataNonFile *awbidat;  // historical benefit increases and average wages
       PiaParamsAny *piaparms;  // piaparms class
       Assumptions *assumptions;  // pia parameter assumptions
       LawChangeArray *lawChange;  // law changes
@@ -55,11 +46,10 @@ class AnypiaTestDoc
       TaxData *taxData;
       PiaOut *piaOut;
    public:
-      AnypiaTestDoc();
-      ~AnypiaTestDoc();
-      std::string  calculate();
-      void  savecase ( std::stringstream& out );
-      void  nonins ( std::ofstream& out );
-      void  disinsout ( std::ofstream& out );
+      AnypiabDoc();
+      ~AnypiabDoc();
+      std::string  calculate(std::string strPiaDoc);
+      void  savecase ( std::ostream& out );
+      void  nonins ( std::ostream& out );
+      void  disinsout ( std::ostream& out );
 };
-
