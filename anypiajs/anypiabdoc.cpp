@@ -54,7 +54,7 @@ extern char *optarg;  // option argument
 EMSCRIPTEN_BINDINGS(PIA_DOC) {
 	emscripten::class_<AnypiabDoc>("PIADoc")
 		.constructor<>()
-		.function("clac", &AnypiabDoc::calculate);
+		.function("calculate", &AnypiabDoc::calculate);
 }
 
 #endif
