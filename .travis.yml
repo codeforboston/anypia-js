@@ -10,7 +10,7 @@ matrix:
         - choco install vcbuildtools -ia "/InstallSelectableItems Win81SDK_CppBuildSKUV1;VisualCppBuildTools_ATLMFC_SDK"
         - export PATH=$MSBUILD_PATH:$PATH
         - cd oactobjs32
-        - wget -q "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
+        - curl -L -O 'https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip'
         - 7z x -bd boost_1_64_0.zip
         - cd boost_1_64_0
         - ./bootstrap.bat
@@ -59,7 +59,7 @@ matrix:
         # Needed to use Homebrew's emscripten
         - export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
         - export BINARYEN=/usr/local/opt/binaryen
-        - wget -q "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
+        - curl -L -O "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
         - unzip -q boost_1_64_0.zip
         - cd boost_1_64_0
         - ./bootstrap.sh
@@ -69,6 +69,11 @@ matrix:
         - cd ..
         - mkdir anypiab/build
         - cd anypiab/build
+        - emcmake cmake -DBOOST_INCLUDEDIR=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB ..
+        - make -j2
+        - cd ../..
+        - mkdir anypiajs/build
+        - cd anypiajs/build
         - emcmake cmake -DBOOST_INCLUDEDIR=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB ..
         - make -j2
     - os: windows
@@ -90,7 +95,7 @@ matrix:
         - choco install vcbuildtools -ia "/InstallSelectableItems Win81SDK_CppBuildSKUV1;VisualCppBuildTools_ATLMFC_SDK"
         - export PATH=$MSBUILD_PATH:$PATH
         - cd oactobjs32
-        - wget -q "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
+        - curl -L -O "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
         - 7z x -bd boost_1_64_0.zip
         - cd boost_1_64_0
         - ./bootstrap.bat
@@ -101,5 +106,10 @@ matrix:
         - cd anypiab
         - mkdir build
         - cd build
+        - ../../emsdk/upstream/emscripten/emcmake cmake -DBOOST_ROOT=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB -G "NMake Makefiles" ..
+        - nmake
+        - cd ../..
+        - mkdir anypiajs/build
+        - cd anypiajs/build
         - ../../emsdk/upstream/emscripten/emcmake cmake -DBOOST_ROOT=$BOOST_INCL -DBOOST_LIBRARYDIR=$BOOST_LIB -G "NMake Makefiles" ..
         - nmake
