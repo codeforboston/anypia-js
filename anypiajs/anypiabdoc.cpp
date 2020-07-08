@@ -22,6 +22,7 @@
 #include "PiaTable.h"
 #include "Path.h"
 #include "DateFormatter.h"
+#include "json.hpp"
 #ifdef DETAILS
 #include "outfile.h"
 #include "OutFile80.h"
@@ -54,7 +55,9 @@ extern char *optarg;  // option argument
 EMSCRIPTEN_BINDINGS(PIA_DOC) {
 	emscripten::class_<AnypiabDoc>("PIADoc")
 		.constructor<>()
-		.function("calculate", &AnypiabDoc::calculate);
+		.function("calculate", &AnypiabDoc::calculate)
+      .function("getTestOutput", &AnypiabDoc::GetTestOutput)
+      .function("getOuput", &AnypiabDoc::GetOutput);
 }
 
 #endif
@@ -134,53 +137,56 @@ std::string AnypiabDoc::calculate(std::string strPiaDoc)
 
 
    userAssumptions->setIstart(piaparms->getIstart());
-      try {
-         
-         workerData->deleteContents();
-         piaData->deleteContents();
-         earnProject->deleteContents();
-         widowDataArray->deleteContents();
-         widowPiaDataArray->deleteContents();
-         secondaryArray->deleteContents();
+   try {
+      
+      workerData->deleteContents();
+      piaData->deleteContents();
+      earnProject->deleteContents();
+      widowDataArray->deleteContents();
+      widowPiaDataArray->deleteContents();
+      secondaryArray->deleteContents();
 
-		 std::istringstream is(strPiaDoc);
+      std::istringstream is(strPiaDoc);
 
-         ierr = piaread->read(is);
+      ierr = piaread->read(is);
 
-         if (ierr == 0 || ierr == PIA_IDS_READEOF || 
-             ierr == PIA_IDS_READMORE) {
-           DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? 
-              secondaryArray->secondary[0]->entDate : 
-              workerData->getEntDate();
-           piacal->dataCheck(entDate);
-           piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
-              *secondaryArray);
-           piacal->calculate1(*assumptions);
-           // find the date of entitlement to use to calculate the pia
-           // compute regular pias and primary benefit
-           piacal->calculate2(entDate);
-           piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
-              *secondaryArray);
-           piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
-           savecase(oss);
-           //nonins(out);
-           //if (workerData->getJoasdi() == WorkerData::DISABILITY)
-           //   disinsout(out);
-         } else {
-           PiaException e(ierr);
-           cerr << workerData->getIdString() << ": ";
-           cerr << e.what() << " in file read" << endl;
-		   rval = 2;
-         }
-      // no problem with calculation
-      } catch (PiaException e) {
-         cerr << workerData->getIdString() << ": ";
-         cerr << e.what() << " in calculation" << endl;
-		   rval = 2;
-         // continue with next case
+      if (ierr == 0 || ierr == PIA_IDS_READEOF || ierr == PIA_IDS_READMORE) {
+         DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? 
+            secondaryArray->secondary[0]->entDate : 
+            workerData->getEntDate();
+
+         piacal->dataCheck(entDate);
+         piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
+            *secondaryArray);
+
+         piacal->calculate1(*assumptions);
+         // find the date of entitlement to use to calculate the pia
+         // compute regular pias and primary benefit
+         piacal->calculate2(entDate);
+         piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
+            *secondaryArray);
+            
+         piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
+         savecase(oss);
+         //nonins(out);
+         //if (workerData->getJoasdi() == WorkerData::DISABILITY)
+         //   disinsout(out);
       }
+      else {
+         PiaException e(ierr);
+         cerr << workerData->getIdString() << ": ";
+         cerr << e.what() << " in file read" << endl;
+         rval = 2;
+      }
+   }
+   catch (PiaException e) {
+      cerr << workerData->getIdString() << ": ";
+      cerr << e.what() << " in calculation" << endl;
+      rval = 2;
+      // continue with next case
+   }
 
-	string strResult = oss.str();
+	std::string strResult = oss.str();
 
    return strResult;
 }
@@ -308,4 +314,36 @@ void AnypiabDoc::disinsout( std::ostream& out )
    if (!piaData->disInsCode.isDisabilityInsured()) {
       out << "Preceding case not disability insured" << endl;
    }
+}
+
+
+
+std::string AnypiabDoc::GetTestOutput()
+{
+   nlohmann::json json;
+
+   nlohmann::json earnings;
+   earnings["2015"] = 2525;
+   earnings["2016"] = 12345;
+   earnings["2017"] = 10000;
+   earnings["2018"] = 253300;
+   earnings["2019"] = 5;
+   earnings["2020"] = 1100000;
+
+   json["RegularEarnings"] = earnings;
+   json["IndexEarnings"] = earnings;
+
+   json["EffectiveData"] = "07/2020";
+   json["AIME"] = 5827;
+   json["PIA"] = "1939.00";
+   json["IncrementFactor"] = "1.00000";
+   json["MBA"] = "1939.00";
+   json["FamilyMax"] = "3394.10";
+
+   return json.dump();   
+}
+
+std::string AnypiabDoc::GetOutput() 
+{
+   return "{}";
 }

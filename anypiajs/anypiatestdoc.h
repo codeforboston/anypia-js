@@ -61,5 +61,7 @@ class AnypiaTestDoc
       void  savecase ( std::stringstream& out );
       void  nonins ( std::ofstream& out );
       void  disinsout ( std::ofstream& out );
+
+      std::string GetDetails();
 };
 

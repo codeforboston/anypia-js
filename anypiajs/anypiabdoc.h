@@ -52,4 +52,7 @@ class AnypiabDoc
       void  savecase ( std::ostream& out );
       void  nonins ( std::ostream& out );
       void  disinsout ( std::ostream& out );
+
+      std::string GetTestOutput();
+      std::string GetOutput();
 };

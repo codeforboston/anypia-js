@@ -25,12 +25,14 @@
 #include "OutFile80.h"
 #include "TaxData.h"
 #endif
+#include "piaout/EarningsPage.h"
 
 
 #ifdef WEB_ASSEMBLY
 EMSCRIPTEN_BINDINGS(test_doc) {
    emscripten::class_<AnypiaTestDoc>("TestDoc")
    .constructor<>()
+   .function("getDetails", &AnypiaTestDoc::GetDetails)
    .function("clac", &AnypiaTestDoc::calculate);
 }
 #endif
@@ -179,6 +181,7 @@ std::string AnypiaTestDoc::calculate()
       //nonins(out);
       //if (workerData->getJoasdi() == WorkerData::DISABILITY)
       //   disinsout(out);
+
 #ifdef DETAILS
       // print detailed results for each non-statement case
       if (workerData->getJoasdi() != WorkerData::PEBS_CALC) {
@@ -307,4 +310,21 @@ void AnypiaTestDoc::disinsout( std::ofstream& out )
    if (!piaData->disInsCode.isDisabilityInsured()) {
       out << "Preceding case not disability insured" << endl;
    }
+}
+
+std::string AnypiaTestDoc::GetDetails() 
+{
+   stringstream ss;
+
+   EarningsPage earnings(*piacal);
+   // OnePage details(*piacal);
+   earnings.prepareStrings();
+
+   for(unsigned i = 0; i < earnings.getCount(); ++i) {
+      std::string str = earnings.getString(i);
+
+      ss << str << endl;
+   }
+
+   return ss.str();
 }
