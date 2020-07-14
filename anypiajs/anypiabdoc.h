@@ -53,6 +53,6 @@ class AnypiabDoc
       void  nonins ( std::ostream& out );
       void  disinsout ( std::ostream& out );
 
-      std::string GetTestOutput();
       std::string GetOutput();
+      void PrintDetails();
 };

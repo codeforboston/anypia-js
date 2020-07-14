@@ -42,6 +42,7 @@ set(SOURCES
     "Application.cpp"
     "anypiatestdoc.cpp"
     "anypiabdoc.cpp"
+    "PiaCalOutput.cpp"
 )
 
 find_package(Boost 1.64.0 REQUIRED COMPONENTS date_time)
@@ -63,7 +64,7 @@ set(EXPORTED_RUNTIME_METHODS "-s EXTRA_EXPORTED_RUNTIME_METHODS=\"['ccall', 'cwr
 
 add_definitions(-DWEB_ASSEMBLY)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS " --bind ${EXPORTED_FUNCTIONS} ${EXPORTED_RUNTIME_METHODS}")
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-s USE_BOOST_HEADERS=1" LINK_FLAGS "-s USE_BOOST_HEADERS=1 --bind ${EXPORTED_FUNCTIONS} ${EXPORTED_RUNTIME_METHODS}")
 #set(EMCC_CFLAGS "${EMCC_CFLAGS} ")
 #set(EMCC_CFLAGS "${EMCC_CFLAGS} -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']")
 

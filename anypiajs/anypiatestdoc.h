@@ -63,5 +63,7 @@ class AnypiaTestDoc
       void  disinsout ( std::ofstream& out );
 
       std::string GetDetails();
+
+      void PrintAllDetails();
 };
 
