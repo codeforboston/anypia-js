@@ -29,6 +29,7 @@
 #endif
 
 #include "PiaCalOutput.h"
+#include "DateFormatter.h"
 
 // uncomment the following line to use one file with multiple cases (anypiab);
 // otherwise the program expects multiple files, each with one case (anypiac)
@@ -58,6 +59,7 @@ EMSCRIPTEN_BINDINGS(PIA_DOC)
        .constructor<>()
        .function("calculate", &AnypiabDoc::calculate)
        .function("printDetails", &AnypiabDoc::PrintDetails)
+	   .function("getWindfallType", &AnypiabDoc::GetWindfallType)
        .function("getResult", &AnypiabDoc::GetOutput);
 }
 
@@ -335,4 +337,9 @@ std::string AnypiabDoc::GetOutput()
 void AnypiabDoc::PrintDetails() 
 {
    PiaCalOutput::PrintPageDetails(*piacal);
+}
+
+std::string AnypiabDoc::GetWindfallType()
+{
+   return PiaCalOutput::GetWindwfallType(*piacal);
 }

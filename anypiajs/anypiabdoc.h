@@ -55,4 +55,5 @@ class AnypiabDoc
 
       std::string GetOutput();
       void PrintDetails();
+	  std::string GetWindfallType();
 };
