@@ -6,7 +6,7 @@
 // printed can be specified in function savecase, at the end of this file.
 
 #if defined(_WIN32)
-#pragma warning(disable:4786)
+#pragma warning(disable : 4786)
 #endif
 #include <fstream>
 #include <iomanip>
@@ -27,6 +27,10 @@
 #include "OutFile80.h"
 #include "TaxData.h"
 #endif
+
+#include "PiaCalOutput.h"
+#include "DateFormatter.h"
+
 // uncomment the following line to use one file with multiple cases (anypiab);
 // otherwise the program expects multiple files, each with one case (anypiac)
 // #define ONEBIGFILE
@@ -34,10 +38,10 @@
 using namespace std;
 
 #ifdef MSDOS
-extern int   getopt   ( int, char **, char * );
+extern int getopt(int, char **, char *);
 #endif
 
-extern char *optarg;  // option argument
+extern char *optarg; // option argument
 
 #ifdef LAWCHG
 #define ANYPIA "anypialc"
@@ -45,16 +49,18 @@ extern char *optarg;  // option argument
 #define ANYPIA "anypia"
 #endif
 
-
-
 #ifdef WEB_ASSEMBLY
 #include <emscripten.h>
 #include <emscripten/bind.h>
 
-EMSCRIPTEN_BINDINGS(PIA_DOC) {
-	emscripten::class_<AnypiabDoc>("PIADoc")
-		.constructor<>()
-		.function("calculate", &AnypiabDoc::calculate);
+EMSCRIPTEN_BINDINGS(PIA_DOC)
+{
+   emscripten::class_<AnypiabDoc>("PIADoc")
+       .constructor<>()
+       .function("calculate", &AnypiabDoc::calculate)
+       .function("printDetails", &AnypiabDoc::PrintDetails)
+	   .function("getWindfallType", &AnypiabDoc::GetWindfallType)
+       .function("getResult", &AnypiabDoc::GetOutput);
 }
 
 #endif
@@ -74,20 +80,20 @@ AnypiabDoc::AnypiabDoc()
    earnProject = new EarnProject(YEAR2090);
    pebs = new Pebs;
    piaread = new PiaReadAny(*workerData, *widowDataArray, *widowPiaDataArray,
-      *userAssumptions, *secondaryArray, *earnProject, *pebs);
+                            *userAssumptions, *secondaryArray, *earnProject, *pebs);
    //piaread->setEarnWidth(11);
    awbidat = new AwbiDataNonFile(baseyear->getYear(),
-      WorkerData::getMaxyear());
+                                 WorkerData::getMaxyear());
    assumptions = new AssumptionsNonFile(baseyear->getYear(),
-      WorkerData::getMaxyear());
+                                        WorkerData::getMaxyear());
    lawChange = new LawChangeArray(baseyear->getYear(),
-      WorkerData::getMaxyear(), "");
+                                  WorkerData::getMaxyear(), "");
    piaparms = new PiaParamsAny(baseyear->getYear(), WorkerData::getMaxyear(),
-      *awbidat, *lawChange );
+                               *awbidat, *lawChange);
    piaparms->setHistFqinc();
    piacal = new PiaCalAny(*workerData, *piaData, *widowDataArray,
-      *widowPiaDataArray, *piaparms, *userAssumptions, *secondaryArray,
-      *lawChange, *pebs, *earnProject);
+                          *widowPiaDataArray, *piaparms, *userAssumptions, *secondaryArray,
+                          *lawChange, *pebs, *earnProject);
 #ifdef DETAILS
    taxData = new TaxData(WorkerData::getMaxyear());
    piaOut = new PiaOut(*piacal, *taxData);
@@ -123,64 +129,68 @@ AnypiabDoc::~AnypiabDoc()
 // Returns: Error code.
 //      0 : No error.
 //      1 : Error that stops file processing.
-//      2 : Error that only affects some cases.  
+//      2 : Error that only affects some cases.
 std::string AnypiabDoc::calculate(std::string strPiaDoc)
 {
-   ifstream in;  // stream with case to read
-   char ernfil[80];  // name of file with stored case
-   int ierr = 0;  // error indicator
+   ifstream in;     // stream with case to read
+   char ernfil[80]; // name of file with stored case
+   int ierr = 0;    // error indicator
    int rval = 0;
    ostringstream oss;
 
-
    userAssumptions->setIstart(piaparms->getIstart());
-      try {
-         
-         workerData->deleteContents();
-         piaData->deleteContents();
-         earnProject->deleteContents();
-         widowDataArray->deleteContents();
-         widowPiaDataArray->deleteContents();
-         secondaryArray->deleteContents();
+   try
+   {
 
-		 std::istringstream is(strPiaDoc);
+      workerData->deleteContents();
+      piaData->deleteContents();
+      earnProject->deleteContents();
+      widowDataArray->deleteContents();
+      widowPiaDataArray->deleteContents();
+      secondaryArray->deleteContents();
 
-         ierr = piaread->read(is);
+      std::istringstream is(strPiaDoc);
 
-         if (ierr == 0 || ierr == PIA_IDS_READEOF || 
-             ierr == PIA_IDS_READMORE) {
-           DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? 
-              secondaryArray->secondary[0]->entDate : 
-              workerData->getEntDate();
-           piacal->dataCheck(entDate);
-           piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
-              *secondaryArray);
-           piacal->calculate1(*assumptions);
-           // find the date of entitlement to use to calculate the pia
-           // compute regular pias and primary benefit
-           piacal->calculate2(entDate);
-           piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
-              *secondaryArray);
-           piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
-           savecase(oss);
-           //nonins(out);
-           //if (workerData->getJoasdi() == WorkerData::DISABILITY)
-           //   disinsout(out);
-         } else {
-           PiaException e(ierr);
-           cerr << workerData->getIdString() << ": ";
-           cerr << e.what() << " in file read" << endl;
-		   rval = 2;
-         }
-      // no problem with calculation
-      } catch (PiaException e) {
-         cerr << workerData->getIdString() << ": ";
-         cerr << e.what() << " in calculation" << endl;
-		   rval = 2;
-         // continue with next case
+      ierr = piaread->read(is);
+
+      if (ierr == 0 || ierr == PIA_IDS_READEOF || ierr == PIA_IDS_READMORE)
+      {
+         DateMoyr entDate = (workerData->getJoasdi() == WorkerDataGeneral::SURVIVOR) ? secondaryArray->secondary[0]->entDate : workerData->getEntDate();
+
+         piacal->dataCheck(entDate);
+         piacal->dataCheckAux(*widowDataArray, *widowPiaDataArray,
+                              *secondaryArray);
+
+         piacal->calculate1(*assumptions);
+         // find the date of entitlement to use to calculate the pia
+         // compute regular pias and primary benefit
+         piacal->calculate2(entDate);
+         piacal->reindWidCalAll(*widowDataArray, *widowPiaDataArray,
+                                *secondaryArray);
+
+         piacal->piaCal3(*widowPiaDataArray, *secondaryArray);
+         savecase(oss);
+         //nonins(out);
+         //if (workerData->getJoasdi() == WorkerData::DISABILITY)
+         //   disinsout(out);
       }
+      else
+      {
+         PiaException e(ierr);
+         cerr << workerData->getIdString() << ": ";
+         cerr << e.what() << " in file read" << endl;
+         rval = 2;
+      }
+   }
+   catch (PiaException e)
+   {
+      cerr << workerData->getIdString() << ": ";
+      cerr << e.what() << " in calculation" << endl;
+      rval = 2;
+      // continue with next case
+   }
 
-	string strResult = oss.str();
+   std::string strResult = oss.str();
 
    return strResult;
 }
@@ -191,20 +201,23 @@ std::string AnypiabDoc::calculate(std::string strPiaDoc)
 //
 // Arguments:
 //   out: Output stream.
-void AnypiabDoc::savecase( std::ostream& out )
+void AnypiabDoc::savecase(std::ostream &out)
 {
    char insCode = piaData->getFinsCode2();
    char insStat = 'T';
-   if (insCode == '4' || insCode == '5' || insCode == '6' || insCode == '7') {
+   if (insCode == '4' || insCode == '5' || insCode == '6' || insCode == '7')
+   {
       insStat = 'F';
    }
    if ((workerData->getJoasdi() == WorkerData::DISABILITY) &&
-      !piaData->disInsCode.isDisabilityInsured()) {
+       !piaData->disInsCode.isDisabilityInsured())
+   {
       insStat = 'F';
    }
-   if (workerData->getJoasdi() == WorkerData::PEBS_CALC) {
+   if (workerData->getJoasdi() == WorkerData::PEBS_CALC)
+   {
       out << workerData->ssn.toString();
-	  out << setprecision(0) << setfill(' ');
+      out << setprecision(0) << setfill(' ');
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_EARLY);
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_FULL);
       out << setw(6) << pebs->getBenefitPebs(Pebs::PEBS_OAB_DELAYED);
@@ -215,11 +228,13 @@ void AnypiabDoc::savecase( std::ostream& out )
       out << setw(6) << pebs->getMfbPebs(Pebs::PEBS_DISAB);
       out << endl;
    }
-   else {
-      if (workerData->getJoasdi() != WorkerData::SURVIVOR) {
+   else
+   {
+      if (workerData->getJoasdi() != WorkerData::SURVIVOR)
+      {
          out << workerData->ssn.toString();
-         out << " " << DateFormatter::toString(workerData->getBirthDate(),"s");
-		 out << setprecision(2) << setfill(' ');
+         out << " " << DateFormatter::toString(workerData->getBirthDate(), "s");
+         out << setprecision(2) << setfill(' ');
          out << setw(8) << piaData->highPia.get();
          out << setw(8) << piaData->highMfb.get();
          out << setw(8) << piaData->roundedBenefit.get();
@@ -246,11 +261,12 @@ void AnypiabDoc::savecase( std::ostream& out )
          //out << " " << "A ";
          out << " " << insStat << endl;
       }
-      for (int i = 0; i < piacal->widowArray.getFamSize(); i++) {
+      for (int i = 0; i < piacal->widowArray.getFamSize(); i++)
+      {
          out << workerData->ssn.toString();
          out << " "
-            << DateFormatter::toString(widowDataArray->workerData[i]->getBirthDate(),"s");
-		 out << setprecision(2)  << setfill(' ');
+             << DateFormatter::toString(widowDataArray->workerData[i]->getBirthDate(), "s");
+         out << setprecision(2) << setfill(' ');
          out << setw(8) << piaData->highPia.get();
          out << setw(8) << piaData->highMfb.get();
          Secondary *secondary = piacal->secondaryArray.secondary[i];
@@ -262,9 +278,11 @@ void AnypiabDoc::savecase( std::ostream& out )
          out << " " << insStat << endl;
       }
    }
-   if (piacal->oldStart != (OldStart*)0) {
-      const OldStart* oldStart = piacal->oldStart;
-      if (oldStart->getMethodOs() < 4 && workerData->getIbegin() >= 1950) {
+   if (piacal->oldStart != (OldStart *)0)
+   {
+      const OldStart *oldStart = piacal->oldStart;
+      if (oldStart->getMethodOs() < 4 && workerData->getIbegin() >= 1950)
+      {
          out << "Need annual pre-1951 earnings in prior case" << endl;
       }
    }
@@ -274,28 +292,28 @@ void AnypiabDoc::savecase( std::ostream& out )
 //
 // Arguments:
 //   out: Output stream.
-void AnypiabDoc::nonins( std::ostream& out )
+void AnypiabDoc::nonins(std::ostream &out)
 {
    switch (piaData->getFinsCode2())
    {
-      case '2':
-         out << "Preceding case only currently insured based on input data"
-            << endl;
-         break;
-      case '4':
-         out << "Preceding case not fully insured based on input data" << endl;
-         break;
-      case '5':
-         out << "Preceding case not fully or totalization insured" << endl;
-         break;
-      case '6':
-         out << "Preceding case not insured for totalization benefits" << endl;
-         break;
-      case '7':
-         out << "Preceding case insured for regular benefits" << endl;
-         break;
-      default:
-         break;
+   case '2':
+      out << "Preceding case only currently insured based on input data"
+          << endl;
+      break;
+   case '4':
+      out << "Preceding case not fully insured based on input data" << endl;
+      break;
+   case '5':
+      out << "Preceding case not fully or totalization insured" << endl;
+      break;
+   case '6':
+      out << "Preceding case not insured for totalization benefits" << endl;
+      break;
+   case '7':
+      out << "Preceding case insured for regular benefits" << endl;
+      break;
+   default:
+      break;
    }
 }
 
@@ -303,9 +321,25 @@ void AnypiabDoc::nonins( std::ostream& out )
 //
 // Arguments:
 //   out: Output stream.
-void AnypiabDoc::disinsout( std::ostream& out )
+void AnypiabDoc::disinsout(std::ostream &out)
 {
-   if (!piaData->disInsCode.isDisabilityInsured()) {
+   if (!piaData->disInsCode.isDisabilityInsured())
+   {
       out << "Preceding case not disability insured" << endl;
    }
+}
+
+std::string AnypiabDoc::GetOutput()
+{
+   return PiaCalOutput::ToJson(*piacal);
+}
+
+void AnypiabDoc::PrintDetails() 
+{
+   PiaCalOutput::PrintPageDetails(*piacal);
+}
+
+std::string AnypiabDoc::GetWindfallType()
+{
+   return PiaCalOutput::GetWindwfallType(*piacal);
 }

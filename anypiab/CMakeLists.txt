@@ -51,7 +51,7 @@ endif()
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 if(NOT DEFINED ANYPIATEST)
-    add_compile_definitions("ANYPIAB")
+    add_definitions(-DANYPIAB)
 endif(NOT DEFINED ANYPIATEST)
 
 # On Linux, the order of these libraries matters!
