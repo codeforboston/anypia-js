@@ -1,8 +1,8 @@
 
 export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
 export BINARYEN=/usr/local/opt/binaryen
-curl -L -O "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
-unzip -q boost_1_64_0.zip
+#curl -L -O "https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip"
+#unzip -q boost_1_64_0.zip
 cd boost_1_64_0
 ./bootstrap.sh
 
