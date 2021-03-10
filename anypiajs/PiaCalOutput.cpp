@@ -17,10 +17,14 @@
 #include "bendpia.h"
 #include "WageInd.h"
 
+#include "anypiajsConfig.h"
+
 #include <vector>
 #include <iostream>
 
 using namespace json;
+
+
 
 
 std::string PiaCalOutput::GetPIAMethodType(const PiaMethod* pMethod)
@@ -377,4 +381,7 @@ void PiaCalOutput::AddWageBenefit(json::JSON& parent, const WageInd * pWageInd, 
     parent["PIAEligibility"] = piaEligibility;
     parent["PIAAfterWindwfall"] = piaAfterWindfall;
     parent["NoncoveredPosion"] = noncoveredPension;
+    parent["projectname"] = PROJECT_NAME;
+    parent["projectversion"] = PROJECT_VER;
+    parent["projectdescription"] = PROJECT_DESC;
 }

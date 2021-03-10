@@ -4,6 +4,12 @@ set(CMAKE_VERBOSE_MAKEFILE on)
 
 project(anypiajs)
 
+project(anypiajs VERSION "2020.1")
+project(anypiajs DESCRIPTION "The current version of the Social Security Detailed Calculator is 2020.1, which was released on December 31, 2019. It updates the 2019.2 version with the new economic information from the automatic adjustments announced on October 10, 2019.") 
+
+configure_file(anypiajsConfig.h.in 
+include_directories(${PROJECT_BINARY_BIN}))
+
 if(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
     # CMake's Emscripten settings search for everything under
     # the toolchain prefix, this breaks Boost find_package.
