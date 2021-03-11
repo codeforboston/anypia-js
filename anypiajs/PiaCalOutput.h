@@ -16,6 +16,7 @@ public:
     std::string GetPIAMethodType(const PiaMethod* pMethod);
 
 protected:
+    json::JSON GetAppInfo();
     json::JSON GetEarnings();
     json::JSON GetComputationYears();
     json::JSON GetAIME();

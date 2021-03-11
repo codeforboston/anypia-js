@@ -1,8 +1,19 @@
 cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_VERBOSE_MAKEFILE on)
+# the name of the template for the project defines like version and description
+set(CONFIG_DEFS_FILE ProjectConfigs)
 
 project(anypiajs)
+
+set(VERSION_MAJOR 2020)
+set(VERSION_MINOR 1)
+set(PROJECT_DESCRIPTION "The current version of the Social Security Detailed Calculator is 2020.1, which was released on December 31, 2019. It updates the 2019.2 version with the new economic information from the automatic adjustments announced on October 10, 2019.")
+
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/${CONFIG_DEFS_FILE}.in
+  ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_DEFS_FILE}.rc
+  @ONLY)
 
 if(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
     # CMake's Emscripten settings search for everything under
@@ -83,4 +94,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 target_include_directories(${PROJECT_NAME} PUBLIC
     "${PROJECT_SOURCE_DIR}/../oactobjs32"
     ${Boost_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
