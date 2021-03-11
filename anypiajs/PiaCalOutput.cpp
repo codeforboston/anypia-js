@@ -16,6 +16,7 @@
 #include "DateFormatter.h"
 #include "bendpia.h"
 #include "WageInd.h"
+#include "ProjectConfigs.rc"
 
 #include <vector>
 #include <iostream>
@@ -88,7 +89,7 @@ std::string PiaCalOutput::ToJson(const PiaCalAny &piaCal)
     json::JSON results;
     results["Earnings"] = output.GetEarnings();
     results["Calculation"] = output.GetBenefit();
-
+    results["App"] = output.GetAppInfo();
     //output.AddBenfit(results);
     //results["PIAValue"] = output.GetPIAValue();
 
@@ -144,6 +145,18 @@ std::string PiaCalOutput::GetWindwfallType(const PiaCalAny& piaCal)
 
     return strResult;
 }
+
+JSON PiaCalOutput::GetAppInfo()
+{
+    JSON result;
+
+    result["Name"] = PROJECT_NAME;
+    result["Description"] = PROJECT_DESC;
+    result["Version"] = PROJECT_VER;
+
+    return result;
+}
+
 
 JSON PiaCalOutput::GetEarnings()
 {

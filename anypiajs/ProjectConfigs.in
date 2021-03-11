@@ -1,0 +1,6 @@
+// ProjectConfigs.rc.in
+#define PROJECT_NAME "@PROJECT_NAME@"
+#define PROJECT_VER "@VERSION_MAJOR@.@VERSION_MINOR@"
+#define PROJECT_DESC "@PROJECT_DESCRIPTION@"
+//
+// ...along with the rest of the file from your "manual methods" reference
